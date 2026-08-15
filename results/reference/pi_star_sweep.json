@@ -1,0 +1,3828 @@
+{
+  "config": {
+    "sigmas": [
+      0.0,
+      0.4,
+      1.0,
+      2.0
+    ],
+    "pi_grid": [
+      0.5,
+      0.6,
+      0.7,
+      0.775,
+      0.85,
+      0.9
+    ],
+    "n_seeds": 12,
+    "episodes": 12,
+    "alpha": 0.3,
+    "pi_operational": 0.7,
+    "pi_theory": 0.775,
+    "note": "Operational Hybrid uses pi*=0.7; theory from H,M,L gives ~0.775 at alpha=0.3."
+  },
+  "seed_rows": [
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 0,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 0,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 0,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 0,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 0,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 0,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 1,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 1,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 1,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 1,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 1,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 1,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 2,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 2,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 2,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 2,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 2,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 2,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 3,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 3,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 3,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 3,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 3,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 3,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 4,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 4,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 4,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 4,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 4,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 4,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 5,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 5,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 5,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 5,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 5,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 5,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 6,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 6,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 6,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 6,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 6,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 6,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 7,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 7,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 7,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 7,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 8,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 7,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 7,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 8,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 8,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 8,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 8,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 9,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 8,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 9,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 9,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 9,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 9,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 9,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 10,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 10,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 10,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 10,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 10,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 10,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "seed": 11,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "seed": 11,
+      "mean_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "seed": 11,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "seed": 11,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "seed": 11,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "seed": 11,
+      "mean_step_regret": 2.5,
+      "mean_episode_reward": 1641.0140927037962,
+      "gate_cvar_frac": 0.0196078431372549
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 6.6073440751086805,
+      "mean_episode_reward": 1535.867495978805,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 0,
+      "mean_step_regret": 6.6073440751086805,
+      "mean_episode_reward": 1535.867495978805,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 0,
+      "mean_step_regret": 12.379517361627007,
+      "mean_episode_reward": 1357.6212146332343,
+      "gate_cvar_frac": 0.08737864077669903
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 0,
+      "mean_step_regret": 9.18525156987057,
+      "mean_episode_reward": 1372.1783056434322,
+      "gate_cvar_frac": 0.13799283154121864
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 9.773142047709426,
+      "mean_episode_reward": 1328.282673878632,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 0,
+      "mean_step_regret": 9.773142047709426,
+      "mean_episode_reward": 1328.282673878632,
+      "gate_cvar_frac": 0.2629757785467128
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 0,
+      "mean_step_regret": 9.773142047709426,
+      "mean_episode_reward": 1328.282673878632,
+      "gate_cvar_frac": 0.2041522491349481
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 0,
+      "mean_step_regret": 9.773142047709426,
+      "mean_episode_reward": 1328.282673878632,
+      "gate_cvar_frac": 0.3373702422145329
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 7.180455313628662,
+      "mean_episode_reward": 1510.475936871222,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 1,
+      "mean_step_regret": 7.180455313628662,
+      "mean_episode_reward": 1510.475936871222,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 8.31839217549827,
+      "mean_episode_reward": 1375.8398296421028,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 1,
+      "mean_step_regret": 8.982598306462142,
+      "mean_episode_reward": 1383.7044934481553,
+      "gate_cvar_frac": 0.14963503649635038
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 1,
+      "mean_step_regret": 8.31839217549827,
+      "mean_episode_reward": 1375.8398296421028,
+      "gate_cvar_frac": 0.2
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 6.709755214701292,
+      "mean_episode_reward": 1526.7565195112381,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 1,
+      "mean_step_regret": 8.529543872817209,
+      "mean_episode_reward": 1406.8102695640466,
+      "gate_cvar_frac": 0.09306569343065693
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 1,
+      "mean_step_regret": 8.31839217549827,
+      "mean_episode_reward": 1375.8398296421028,
+      "gate_cvar_frac": 0.31896551724137934
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 1,
+      "mean_step_regret": 8.31839217549827,
+      "mean_episode_reward": 1375.8398296421028,
+      "gate_cvar_frac": 0.2689655172413793
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 2,
+      "mean_step_regret": 6.65568957451708,
+      "mean_episode_reward": 1432.9561757733463,
+      "gate_cvar_frac": 0.08557046979865772
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 7.980540037543045,
+      "mean_episode_reward": 1361.5065507891006,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 2,
+      "mean_step_regret": 6.9757714095953345,
+      "mean_episode_reward": 1412.7497508144334,
+      "gate_cvar_frac": 0.15359477124183007
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 2,
+      "mean_step_regret": 7.980540037543045,
+      "mean_episode_reward": 1361.5065507891006,
+      "gate_cvar_frac": 0.2222222222222222
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 3,
+      "mean_step_regret": 6.280056724063683,
+      "mean_episode_reward": 1562.2842745859464,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 7.4879146147559155,
+      "mean_episode_reward": 1386.6304473512446,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 2,
+      "mean_step_regret": 6.709755214701292,
+      "mean_episode_reward": 1526.7565195112381,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 3,
+      "mean_step_regret": 8.766665195128335,
+      "mean_episode_reward": 1427.3752164041823,
+      "gate_cvar_frac": 0.0890909090909091
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 3,
+      "mean_step_regret": 8.255532239312412,
+      "mean_episode_reward": 1412.7641074402134,
+      "gate_cvar_frac": 0.12975778546712802
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 6.280056724063683,
+      "mean_episode_reward": 1562.2842745859464,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 2,
+      "mean_step_regret": 7.980540037543045,
+      "mean_episode_reward": 1361.5065507891006,
+      "gate_cvar_frac": 0.29248366013071897
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 11.122940754931518,
+      "mean_episode_reward": 1403.6717528087645,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 2,
+      "mean_step_regret": 7.980540037543045,
+      "mean_episode_reward": 1361.5065507891006,
+      "gate_cvar_frac": 0.36764705882352944
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 3,
+      "mean_step_regret": 7.4879146147559155,
+      "mean_episode_reward": 1386.6304473512446,
+      "gate_cvar_frac": 0.1781045751633987
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 3,
+      "mean_step_regret": 7.4879146147559155,
+      "mean_episode_reward": 1386.6304473512446,
+      "gate_cvar_frac": 0.25980392156862747
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 3,
+      "mean_step_regret": 7.4879146147559155,
+      "mean_episode_reward": 1386.6304473512446,
+      "gate_cvar_frac": 0.31862745098039214
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 8.496703518140146,
+      "mean_episode_reward": 1335.1822132786485,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 4,
+      "mean_step_regret": 11.122940754931518,
+      "mean_episode_reward": 1403.6717528087645,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 4,
+      "mean_step_regret": 13.184248925386823,
+      "mean_episode_reward": 1306.0868049712137,
+      "gate_cvar_frac": 0.1323529411764706
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 4,
+      "mean_step_regret": 17.678932738181963,
+      "mean_episode_reward": 1259.9553665353203,
+      "gate_cvar_frac": 0.09192825112107623
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 4,
+      "mean_step_regret": 8.496703518140146,
+      "mean_episode_reward": 1335.1822132786485,
+      "gate_cvar_frac": 0.272875816993464
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 4,
+      "mean_step_regret": 8.496703518140146,
+      "mean_episode_reward": 1335.1822132786485,
+      "gate_cvar_frac": 0.3545751633986928
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 7.02671929317695,
+      "mean_episode_reward": 1410.1514087517714,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 5,
+      "mean_step_regret": 5.843715126206632,
+      "mean_episode_reward": 1471.7501319155651,
+      "gate_cvar_frac": 0.07947019867549669
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 4,
+      "mean_step_regret": 8.490190760787206,
+      "mean_episode_reward": 1335.5143639036487,
+      "gate_cvar_frac": 0.19281045751633988
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 5,
+      "mean_step_regret": 7.02671929317695,
+      "mean_episode_reward": 1410.1514087517714,
+      "gate_cvar_frac": 0.1977124183006536
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 5,
+      "mean_step_regret": 7.02671929317695,
+      "mean_episode_reward": 1410.1514087517714,
+      "gate_cvar_frac": 0.2777777777777778
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 2.88618014514898,
+      "mean_episode_reward": 1603.9542137751962,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 5,
+      "mean_step_regret": 2.88618014514898,
+      "mean_episode_reward": 1603.9542137751962,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 5,
+      "mean_step_regret": 6.552004082968046,
+      "mean_episode_reward": 1434.3618844724253,
+      "gate_cvar_frac": 0.15522875816993464
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 5,
+      "mean_step_regret": 7.02671929317695,
+      "mean_episode_reward": 1410.1514087517714,
+      "gate_cvar_frac": 0.3611111111111111
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 3.218661989628469,
+      "mean_episode_reward": 1610.7553210551876,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 6.57539552891625,
+      "mean_episode_reward": 1433.1689207290674,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 6,
+      "mean_step_regret": 3.218661989628469,
+      "mean_episode_reward": 1610.7553210551876,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 6,
+      "mean_step_regret": 5.367764408281496,
+      "mean_episode_reward": 1495.2792493170502,
+      "gate_cvar_frac": 0.08524590163934426
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 6,
+      "mean_step_regret": 5.728999020919926,
+      "mean_episode_reward": 1476.3351426368797,
+      "gate_cvar_frac": 0.1437908496732026
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 6,
+      "mean_step_regret": 6.57539552891625,
+      "mean_episode_reward": 1433.1689207290674,
+      "gate_cvar_frac": 0.2042483660130719
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 6.065860056086706,
+      "mean_episode_reward": 1517.4628475516965,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 6,
+      "mean_step_regret": 6.57539552891625,
+      "mean_episode_reward": 1433.1689207290674,
+      "gate_cvar_frac": 0.27124183006535946
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 6,
+      "mean_step_regret": 6.57539552891625,
+      "mean_episode_reward": 1433.1689207290674,
+      "gate_cvar_frac": 0.34967320261437906
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 7,
+      "mean_step_regret": 8.19661680859618,
+      "mean_episode_reward": 1401.6804863408322,
+      "gate_cvar_frac": 0.08571428571428572
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 7,
+      "mean_step_regret": 6.065860056086706,
+      "mean_episode_reward": 1517.4628475516965,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 8.390490973278625,
+      "mean_episode_reward": 1340.5990530665863,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 7,
+      "mean_step_regret": 8.390490973278625,
+      "mean_episode_reward": 1340.5990530665863,
+      "gate_cvar_frac": 0.2908496732026144
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 7,
+      "mean_step_regret": 7.025778103628299,
+      "mean_episode_reward": 1410.1994094187528,
+      "gate_cvar_frac": 0.16339869281045752
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 6.4596376067135886,
+      "mean_episode_reward": 1519.51562901583,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 7,
+      "mean_step_regret": 8.390490973278625,
+      "mean_episode_reward": 1340.5990530665863,
+      "gate_cvar_frac": 0.2222222222222222
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 7,
+      "mean_step_regret": 8.390490973278625,
+      "mean_episode_reward": 1340.5990530665863,
+      "gate_cvar_frac": 0.35784313725490197
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 8,
+      "mean_step_regret": 6.4596376067135886,
+      "mean_episode_reward": 1519.51562901583,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 8.920351864373847,
+      "mean_episode_reward": 1313.57614762073,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 8,
+      "mean_step_regret": 6.709314441935574,
+      "mean_episode_reward": 1426.3390561650813,
+      "gate_cvar_frac": 0.0915032679738562
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 8,
+      "mean_step_regret": 7.876953566549909,
+      "mean_episode_reward": 1366.7894608097506,
+      "gate_cvar_frac": 0.16666666666666666
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 8,
+      "mean_step_regret": 8.920351864373847,
+      "mean_episode_reward": 1313.57614762073,
+      "gate_cvar_frac": 0.31209150326797386
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 8,
+      "mean_step_regret": 8.920351864373847,
+      "mean_episode_reward": 1313.57614762073,
+      "gate_cvar_frac": 0.23529411764705882
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 8,
+      "mean_step_regret": 8.920351864373847,
+      "mean_episode_reward": 1313.57614762073,
+      "gate_cvar_frac": 0.3888888888888889
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 10.96533553682296,
+      "mean_episode_reward": 1460.3215897430466,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 9,
+      "mean_step_regret": 10.96533553682296,
+      "mean_episode_reward": 1460.3215897430466,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 8.112316023507423,
+      "mean_episode_reward": 1354.7859755049174,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 9,
+      "mean_step_regret": 15.62928534121049,
+      "mean_episode_reward": 1314.8513536033468,
+      "gate_cvar_frac": 0.07948243992606285
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 9,
+      "mean_step_regret": 7.405147004431773,
+      "mean_episode_reward": 1390.8515954777756,
+      "gate_cvar_frac": 0.14052287581699346
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 9,
+      "mean_step_regret": 8.112316023507423,
+      "mean_episode_reward": 1354.7859755049174,
+      "gate_cvar_frac": 0.20915032679738563
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 5.3616866394930325,
+      "mean_episode_reward": 1536.1588003642048,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 9,
+      "mean_step_regret": 8.112316023507423,
+      "mean_episode_reward": 1354.7859755049174,
+      "gate_cvar_frac": 0.2679738562091503
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 9,
+      "mean_step_regret": 8.112316023507423,
+      "mean_episode_reward": 1354.7859755049174,
+      "gate_cvar_frac": 0.3333333333333333
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 8.485021438146438,
+      "mean_episode_reward": 1335.7779993583279,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 10,
+      "mean_step_regret": 5.3616866394930325,
+      "mean_episode_reward": 1536.1588003642048,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 10,
+      "mean_step_regret": 7.952814024938313,
+      "mean_episode_reward": 1395.8360363732925,
+      "gate_cvar_frac": 0.09726962457337884
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 10,
+      "mean_step_regret": 8.52531789362912,
+      "mean_episode_reward": 1366.638339070061,
+      "gate_cvar_frac": 0.1416382252559727
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 5.890215574584137,
+      "mean_episode_reward": 1536.9632992431968,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 10,
+      "mean_step_regret": 8.485021438146438,
+      "mean_episode_reward": 1335.7779993583279,
+      "gate_cvar_frac": 0.20098039215686275
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 8.084954595443739,
+      "mean_episode_reward": 1358.5819277597172,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 10,
+      "mean_step_regret": 8.485021438146438,
+      "mean_episode_reward": 1335.7779993583279,
+      "gate_cvar_frac": 0.28104575163398693
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 10,
+      "mean_step_regret": 8.485021438146438,
+      "mean_episode_reward": 1335.7779993583279,
+      "gate_cvar_frac": 0.3709150326797386
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "seed": 11,
+      "mean_step_regret": 5.890215574584137,
+      "mean_episode_reward": 1536.9632992431968,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 0,
+      "mean_step_regret": 34.155655211689414,
+      "mean_episode_reward": 946.6666666666665,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 34.155655211689414,
+      "mean_episode_reward": 946.6666666666665,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "seed": 11,
+      "mean_step_regret": 8.824570031340437,
+      "mean_episode_reward": 1413.178785506215,
+      "gate_cvar_frac": 0.08641975308641975
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "seed": 11,
+      "mean_step_regret": 7.455025932837141,
+      "mean_episode_reward": 1390.24785870159,
+      "gate_cvar_frac": 0.14802631578947367
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 0,
+      "mean_step_regret": 29.955904336185906,
+      "mean_episode_reward": 947.6563020459117,
+      "gate_cvar_frac": 0.26608187134502925
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "seed": 11,
+      "mean_step_regret": 8.084954595443739,
+      "mean_episode_reward": 1358.5819277597172,
+      "gate_cvar_frac": 0.3717105263157895
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "seed": 11,
+      "mean_step_regret": 8.084954595443739,
+      "mean_episode_reward": 1358.5819277597172,
+      "gate_cvar_frac": 0.2845394736842105
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "seed": 11,
+      "mean_step_regret": 8.084954595443739,
+      "mean_episode_reward": 1358.5819277597172,
+      "gate_cvar_frac": 0.20723684210526316
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 28.497507336001913,
+      "mean_episode_reward": 1045.283333333333,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 23.371109007855242,
+      "mean_episode_reward": 688.5363589111975,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 0,
+      "mean_step_regret": 25.503099244956427,
+      "mean_episode_reward": 825.4057090419492,
+      "gate_cvar_frac": 0.5584158415841585
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 1,
+      "mean_step_regret": 28.497507336001913,
+      "mean_episode_reward": 1045.283333333333,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 0,
+      "mean_step_regret": 23.371109007855242,
+      "mean_episode_reward": 688.5363589111975,
+      "gate_cvar_frac": 0.9048442906574394
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 1,
+      "mean_step_regret": 37.91586937209673,
+      "mean_episode_reward": 895.7102593249389,
+      "gate_cvar_frac": 0.3082191780821918
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 33.105846221209596,
+      "mean_episode_reward": 966.5340982499997,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 0,
+      "mean_step_regret": 23.371109007855242,
+      "mean_episode_reward": 688.5363589111975,
+      "gate_cvar_frac": 0.745674740484429
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 0,
+      "mean_step_regret": 23.371109007855242,
+      "mean_episode_reward": 688.5363589111975,
+      "gate_cvar_frac": 0.9602076124567474
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 22.553944024058968,
+      "mean_episode_reward": 756.1424748391934,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 2,
+      "mean_step_regret": 33.105846221209596,
+      "mean_episode_reward": 966.5340982499997,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 2,
+      "mean_step_regret": 35.179825607300025,
+      "mean_episode_reward": 901.3269931562827,
+      "gate_cvar_frac": 0.2571428571428571
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 1,
+      "mean_step_regret": 22.403441862586067,
+      "mean_episode_reward": 887.8372198155453,
+      "gate_cvar_frac": 0.5425925925925926
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 1,
+      "mean_step_regret": 22.553944024058968,
+      "mean_episode_reward": 756.1424748391934,
+      "gate_cvar_frac": 0.95
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 1,
+      "mean_step_regret": 22.553944024058968,
+      "mean_episode_reward": 756.1424748391934,
+      "gate_cvar_frac": 0.7275862068965517
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 1,
+      "mean_step_regret": 22.553944024058968,
+      "mean_episode_reward": 756.1424748391934,
+      "gate_cvar_frac": 0.8844827586206897
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 40.03005732867191,
+      "mean_episode_reward": 878.9802499999995,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 2,
+      "mean_step_regret": 19.432285928444138,
+      "mean_episode_reward": 833.0083598432931,
+      "gate_cvar_frac": 0.5684931506849316
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 21.24443580196365,
+      "mean_episode_reward": 685.0478668036516,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 3,
+      "mean_step_regret": 40.03005732867191,
+      "mean_episode_reward": 878.9802499999995,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 2,
+      "mean_step_regret": 21.24443580196365,
+      "mean_episode_reward": 685.0478668036516,
+      "gate_cvar_frac": 0.761437908496732
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 2,
+      "mean_step_regret": 21.24443580196365,
+      "mean_episode_reward": 685.0478668036516,
+      "gate_cvar_frac": 0.9019607843137255
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 3,
+      "mean_step_regret": 30.412625947552588,
+      "mean_episode_reward": 949.7045853335421,
+      "gate_cvar_frac": 0.27790432801822323
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 2,
+      "mean_step_regret": 21.24443580196365,
+      "mean_episode_reward": 685.0478668036516,
+      "gate_cvar_frac": 0.954248366013072
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 3,
+      "mean_step_regret": 22.06567481847677,
+      "mean_episode_reward": 837.4361651738533,
+      "gate_cvar_frac": 0.5509090909090909
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 32.23591243792119,
+      "mean_episode_reward": 983.7829175503158,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 20.46972436798249,
+      "mean_episode_reward": 724.5581499366912,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 3,
+      "mean_step_regret": 20.46972436798249,
+      "mean_episode_reward": 724.5581499366912,
+      "gate_cvar_frac": 0.7091503267973857
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 4,
+      "mean_step_regret": 32.23591243792119,
+      "mean_episode_reward": 983.7829175503158,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 4,
+      "mean_step_regret": 39.28687348625768,
+      "mean_episode_reward": 859.1184693742183,
+      "gate_cvar_frac": 0.31272727272727274
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 3,
+      "mean_step_regret": 20.46972436798249,
+      "mean_episode_reward": 724.5581499366912,
+      "gate_cvar_frac": 0.8611111111111112
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 4,
+      "mean_step_regret": 34.5145308098381,
+      "mean_episode_reward": 763.4493197459786,
+      "gate_cvar_frac": 0.5650224215246636
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 45.36805921137685,
+      "mean_episode_reward": 895.8166666666665,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 21.26011737188939,
+      "mean_episode_reward": 684.2481067374391,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 3,
+      "mean_step_regret": 20.46972436798249,
+      "mean_episode_reward": 724.5581499366912,
+      "gate_cvar_frac": 0.9330065359477124
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 5,
+      "mean_step_regret": 45.36805921137685,
+      "mean_episode_reward": 895.8166666666665,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 4,
+      "mean_step_regret": 21.26011737188939,
+      "mean_episode_reward": 684.2481067374391,
+      "gate_cvar_frac": 0.8888888888888888
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 4,
+      "mean_step_regret": 21.26011737188939,
+      "mean_episode_reward": 684.2481067374391,
+      "gate_cvar_frac": 0.7418300653594772
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 5,
+      "mean_step_regret": 21.954696798595673,
+      "mean_episode_reward": 971.4603485347179,
+      "gate_cvar_frac": 0.32175925925925924
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 4,
+      "mean_step_regret": 21.26011737188939,
+      "mean_episode_reward": 684.2481067374391,
+      "gate_cvar_frac": 0.9526143790849673
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 20.224036809781136,
+      "mean_episode_reward": 737.08821540496,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 5,
+      "mean_step_regret": 19.881265062987538,
+      "mean_episode_reward": 849.65482869392,
+      "gate_cvar_frac": 0.5608465608465608
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 28.44623987977641,
+      "mean_episode_reward": 1092.246066666666,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 5,
+      "mean_step_regret": 20.224036809781136,
+      "mean_episode_reward": 737.08821540496,
+      "gate_cvar_frac": 0.8709150326797386
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 6,
+      "mean_step_regret": 28.44623987977641,
+      "mean_episode_reward": 1092.246066666666,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 5,
+      "mean_step_regret": 20.224036809781136,
+      "mean_episode_reward": 737.08821540496,
+      "gate_cvar_frac": 0.7287581699346405
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 5,
+      "mean_step_regret": 20.224036809781136,
+      "mean_episode_reward": 737.08821540496,
+      "gate_cvar_frac": 0.9477124183006536
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 34.89234190577941,
+      "mean_episode_reward": 935.5908333333332,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 20.33488083889249,
+      "mean_episode_reward": 731.4351699202806,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 6,
+      "mean_step_regret": 28.361555423199786,
+      "mean_episode_reward": 998.2768390817446,
+      "gate_cvar_frac": 0.2884097035040431
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 6,
+      "mean_step_regret": 17.047047087272652,
+      "mean_episode_reward": 908.5286836126301,
+      "gate_cvar_frac": 0.5537190082644629
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 7,
+      "mean_step_regret": 34.89234190577941,
+      "mean_episode_reward": 935.5908333333332,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 6,
+      "mean_step_regret": 20.33488083889249,
+      "mean_episode_reward": 731.4351699202806,
+      "gate_cvar_frac": 0.8888888888888888
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 6,
+      "mean_step_regret": 20.33488083889249,
+      "mean_episode_reward": 731.4351699202806,
+      "gate_cvar_frac": 0.7401960784313726
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 7,
+      "mean_step_regret": 32.12285814633608,
+      "mean_episode_reward": 890.00330147491,
+      "gate_cvar_frac": 0.33810888252148996
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 6,
+      "mean_step_regret": 20.33488083889249,
+      "mean_episode_reward": 731.4351699202806,
+      "gate_cvar_frac": 0.954248366013072
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 48.13245701058202,
+      "mean_episode_reward": 736.5916666666667,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 19.91792137626672,
+      "mean_episode_reward": 752.7001025141955,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 8,
+      "mean_step_regret": 48.13245701058202,
+      "mean_episode_reward": 736.5916666666667,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 7,
+      "mean_step_regret": 19.91792137626672,
+      "mean_episode_reward": 752.7001025141955,
+      "gate_cvar_frac": 0.7418300653594772
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 7,
+      "mean_step_regret": 23.123710281286332,
+      "mean_episode_reward": 808.8717069250578,
+      "gate_cvar_frac": 0.5499092558983666
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 7,
+      "mean_step_regret": 19.91792137626672,
+      "mean_episode_reward": 752.7001025141955,
+      "gate_cvar_frac": 0.9509803921568627
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 8,
+      "mean_step_regret": 38.73975123893245,
+      "mean_episode_reward": 833.484191597533,
+      "gate_cvar_frac": 0.27424749163879597
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 7,
+      "mean_step_regret": 19.91792137626672,
+      "mean_episode_reward": 752.7001025141955,
+      "gate_cvar_frac": 0.880718954248366
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 40.00039059503686,
+      "mean_episode_reward": 913.0409833333329,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 21.1947275039813,
+      "mean_episode_reward": 687.5829900007512,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 8,
+      "mean_step_regret": 24.025021352747444,
+      "mean_episode_reward": 781.1788250539638,
+      "gate_cvar_frac": 0.5537918871252204
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 9,
+      "mean_step_regret": 40.00039059503686,
+      "mean_episode_reward": 913.0409833333329,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 9,
+      "mean_step_regret": 45.10221704073958,
+      "mean_episode_reward": 823.2272139824721,
+      "gate_cvar_frac": 0.27388535031847133
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 8,
+      "mean_step_regret": 21.1947275039813,
+      "mean_episode_reward": 687.5829900007512,
+      "gate_cvar_frac": 0.8888888888888888
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 8,
+      "mean_step_regret": 21.1947275039813,
+      "mean_episode_reward": 687.5829900007512,
+      "gate_cvar_frac": 0.7352941176470589
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 40.4499691478464,
+      "mean_episode_reward": 870.7001091666663,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 8,
+      "mean_step_regret": 21.1947275039813,
+      "mean_episode_reward": 687.5829900007512,
+      "gate_cvar_frac": 0.9624183006535948
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 9,
+      "mean_step_regret": 27.398958902413167,
+      "mean_episode_reward": 831.6286602505928,
+      "gate_cvar_frac": 0.5212569316081331
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 10,
+      "mean_step_regret": 40.4499691478464,
+      "mean_episode_reward": 870.7001091666663,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 20.105356980085592,
+      "mean_episode_reward": 743.1408867194328,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 9,
+      "mean_step_regret": 20.105356980085592,
+      "mean_episode_reward": 743.1408867194328,
+      "gate_cvar_frac": 0.7254901960784313
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 10,
+      "mean_step_regret": 39.19952584258629,
+      "mean_episode_reward": 861.6041573372281,
+      "gate_cvar_frac": 0.3079268292682927
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 9,
+      "mean_step_regret": 20.105356980085592,
+      "mean_episode_reward": 743.1408867194328,
+      "gate_cvar_frac": 0.8545751633986928
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 9,
+      "mean_step_regret": 20.105356980085592,
+      "mean_episode_reward": 743.1408867194328,
+      "gate_cvar_frac": 0.9411764705882353
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 38.65508653126252,
+      "mean_episode_reward": 883.4975854158332,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "seed": 11,
+      "mean_step_regret": 38.65508653126252,
+      "mean_episode_reward": 883.4975854158332,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 21.158486059133917,
+      "mean_episode_reward": 689.431303687968,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 10,
+      "mean_step_regret": 20.036397682967586,
+      "mean_episode_reward": 818.5732698138012,
+      "gate_cvar_frac": 0.5648464163822525
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 10,
+      "mean_step_regret": 21.158486059133917,
+      "mean_episode_reward": 689.431303687968,
+      "gate_cvar_frac": 0.7401960784313726
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 10,
+      "mean_step_regret": 21.158486059133917,
+      "mean_episode_reward": 689.431303687968,
+      "gate_cvar_frac": 0.9673202614379085
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 10,
+      "mean_step_regret": 21.158486059133917,
+      "mean_episode_reward": 689.431303687968,
+      "gate_cvar_frac": 0.8823529411764706
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "seed": 11,
+      "mean_step_regret": 43.29886147682387,
+      "mean_episode_reward": 801.133316007281,
+      "gate_cvar_frac": 0.33707865168539325
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 40.562836424196725,
+      "mean_episode_reward": 845.9000000000001,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 0,
+      "mean_step_regret": 40.562836424196725,
+      "mean_episode_reward": 845.9000000000001,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "seed": 11,
+      "mean_step_regret": 21.315937706646135,
+      "mean_episode_reward": 831.4484852015639,
+      "gate_cvar_frac": 0.5731922398589065
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 21.11830052092413,
+      "mean_episode_reward": 698.1277648260703,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "seed": 11,
+      "mean_step_regret": 21.11830052092413,
+      "mean_episode_reward": 698.1277648260703,
+      "gate_cvar_frac": 0.8914473684210527
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "seed": 11,
+      "mean_step_regret": 21.11830052092413,
+      "mean_episode_reward": 698.1277648260703,
+      "gate_cvar_frac": 0.9555921052631579
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "seed": 11,
+      "mean_step_regret": 21.11830052092413,
+      "mean_episode_reward": 698.1277648260703,
+      "gate_cvar_frac": 0.7467105263157895
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 45.792914220175255,
+      "mean_episode_reward": 797.5333333333333,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 0,
+      "mean_step_regret": 33.46541363649807,
+      "mean_episode_reward": 686.1811511901329,
+      "gate_cvar_frac": 0.5920745920745921
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 1,
+      "mean_step_regret": 45.792914220175255,
+      "mean_episode_reward": 797.5333333333333,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 0,
+      "mean_step_regret": 25.316441732671986,
+      "mean_episode_reward": 477.3755643375266,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 0,
+      "mean_step_regret": 24.402117278850255,
+      "mean_episode_reward": 524.0061114824351,
+      "gate_cvar_frac": 0.9068627450980392
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 0,
+      "mean_step_regret": 25.316441732671986,
+      "mean_episode_reward": 477.3755643375266,
+      "gate_cvar_frac": 0.9754901960784313
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 1,
+      "mean_step_regret": 44.89677346718372,
+      "mean_episode_reward": 668.8527304779101,
+      "gate_cvar_frac": 0.5326370757180157
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 0,
+      "mean_step_regret": 25.316441732671986,
+      "mean_episode_reward": 477.3755643375266,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 0,
+      "mean_step_regret": 25.316441732671986,
+      "mean_episode_reward": 477.3755643375266,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 48.43813072344323,
+      "mean_episode_reward": 771.6666666666665,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 2,
+      "mean_step_regret": 48.43813072344323,
+      "mean_episode_reward": 771.6666666666665,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 1,
+      "mean_step_regret": 25.3874363204469,
+      "mean_episode_reward": 473.75484036100573,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 1,
+      "mean_step_regret": 23.320163583362753,
+      "mean_episode_reward": 579.1857499522974,
+      "gate_cvar_frac": 0.9068627450980392
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 1,
+      "mean_step_regret": 25.3874363204469,
+      "mean_episode_reward": 473.75484036100573,
+      "gate_cvar_frac": 0.9901960784313726
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 2,
+      "mean_step_regret": 37.99416750083137,
+      "mean_episode_reward": 651.3831645303125,
+      "gate_cvar_frac": 0.5768261964735516
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 1,
+      "mean_step_regret": 25.3874363204469,
+      "mean_episode_reward": 473.75484036100573,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 1,
+      "mean_step_regret": 25.3874363204469,
+      "mean_episode_reward": 473.75484036100573,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 2,
+      "mean_step_regret": 25.44220070969637,
+      "mean_episode_reward": 470.9618565092829,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 44.494009603750754,
+      "mean_episode_reward": 834.262583333333,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 3,
+      "mean_step_regret": 44.494009603750754,
+      "mean_episode_reward": 834.262583333333,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 2,
+      "mean_step_regret": 25.44220070969637,
+      "mean_episode_reward": 470.9618565092829,
+      "gate_cvar_frac": 0.9967320261437909
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 2,
+      "mean_step_regret": 24.690212787104542,
+      "mean_episode_reward": 509.3132405614662,
+      "gate_cvar_frac": 0.9215686274509803
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 2,
+      "mean_step_regret": 25.44220070969637,
+      "mean_episode_reward": 470.9618565092829,
+      "gate_cvar_frac": 0.9820261437908496
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 38.09696543593282,
+      "mean_episode_reward": 873.2583333333332,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 3,
+      "mean_step_regret": 37.24004081206237,
+      "mean_episode_reward": 699.5090839204186,
+      "gate_cvar_frac": 0.5662921348314607
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 2,
+      "mean_step_regret": 25.44220070969637,
+      "mean_episode_reward": 470.9618565092829,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 4,
+      "mean_step_regret": 38.09696543593282,
+      "mean_episode_reward": 873.2583333333332,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 3,
+      "mean_step_regret": 24.12702195916341,
+      "mean_episode_reward": 538.035972786464,
+      "gate_cvar_frac": 0.8954248366013072
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 3,
+      "mean_step_regret": 25.60216027498518,
+      "mean_episode_reward": 462.80391867955365,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 3,
+      "mean_step_regret": 25.60216027498518,
+      "mean_episode_reward": 462.80391867955365,
+      "gate_cvar_frac": 0.9820261437908496
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 3,
+      "mean_step_regret": 25.60216027498518,
+      "mean_episode_reward": 462.80391867955365,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 52.71917778980279,
+      "mean_episode_reward": 755.7666666666665,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 4,
+      "mean_step_regret": 53.48517047062207,
+      "mean_episode_reward": 582.1877168135937,
+      "gate_cvar_frac": 0.574750830564784
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 3,
+      "mean_step_regret": 25.60216027498518,
+      "mean_episode_reward": 462.80391867955365,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 5,
+      "mean_step_regret": 52.71917778980279,
+      "mean_episode_reward": 755.7666666666665,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 4,
+      "mean_step_regret": 25.869705463793593,
+      "mean_episode_reward": 449.1591140503245,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 4,
+      "mean_step_regret": 25.869705463793593,
+      "mean_episode_reward": 449.1591140503245,
+      "gate_cvar_frac": 0.9836601307189542
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 4,
+      "mean_step_regret": 25.193842010488407,
+      "mean_episode_reward": 483.628150168889,
+      "gate_cvar_frac": 0.9052287581699346
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 4,
+      "mean_step_regret": 25.869705463793593,
+      "mean_episode_reward": 449.1591140503245,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 5,
+      "mean_step_regret": 25.76747552738428,
+      "mean_episode_reward": 454.3728408071995,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 4,
+      "mean_step_regret": 25.869705463793593,
+      "mean_episode_reward": 449.1591140503245,
+      "gate_cvar_frac": 0.9983660130718954
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 5,
+      "mean_step_regret": 27.00215730983965,
+      "mean_episode_reward": 711.6465053775788,
+      "gate_cvar_frac": 0.5835010060362174
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 43.502908004335545,
+      "mean_episode_reward": 869.1184833333331,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 6,
+      "mean_step_regret": 43.502908004335545,
+      "mean_episode_reward": 869.1184833333331,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 5,
+      "mean_step_regret": 25.76747552738428,
+      "mean_episode_reward": 454.3728408071995,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 5,
+      "mean_step_regret": 25.76747552738428,
+      "mean_episode_reward": 454.3728408071995,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 5,
+      "mean_step_regret": 23.759943392225377,
+      "mean_episode_reward": 556.7569797003039,
+      "gate_cvar_frac": 0.9019607843137255
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 5,
+      "mean_step_regret": 25.76747552738428,
+      "mean_episode_reward": 454.3728408071995,
+      "gate_cvar_frac": 0.9852941176470589
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 46.149404761904755,
+      "mean_episode_reward": 771.6083333333335,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 6,
+      "mean_step_regret": 25.67056033756811,
+      "mean_episode_reward": 459.3155154878245,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 6,
+      "mean_step_regret": 23.81366907449797,
+      "mean_episode_reward": 554.0169699044017,
+      "gate_cvar_frac": 0.9068627450980392
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 6,
+      "mean_step_regret": 29.784240178583953,
+      "mean_episode_reward": 734.13244655146,
+      "gate_cvar_frac": 0.558695652173913
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 7,
+      "mean_step_regret": 46.149404761904755,
+      "mean_episode_reward": 771.6083333333335,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 6,
+      "mean_step_regret": 25.67056033756811,
+      "mean_episode_reward": 459.3155154878245,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 6,
+      "mean_step_regret": 25.67056033756811,
+      "mean_episode_reward": 459.3155154878245,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 57.52806216931217,
+      "mean_episode_reward": 618.1333333333333,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 6,
+      "mean_step_regret": 25.67056033756811,
+      "mean_episode_reward": 459.3155154878245,
+      "gate_cvar_frac": 0.9901960784313726
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 7,
+      "mean_step_regret": 36.10102003168016,
+      "mean_episode_reward": 693.4250882257458,
+      "gate_cvar_frac": 0.5696821515892421
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 8,
+      "mean_step_regret": 57.52806216931217,
+      "mean_episode_reward": 618.1333333333333,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 7,
+      "mean_step_regret": 25.769969249455357,
+      "mean_episode_reward": 454.2456609815745,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 7,
+      "mean_step_regret": 24.102830627973173,
+      "mean_episode_reward": 539.2697306771662,
+      "gate_cvar_frac": 0.8954248366013072
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 8,
+      "mean_step_regret": 45.78632569934954,
+      "mean_episode_reward": 604.9054715453393,
+      "gate_cvar_frac": 0.583554376657825
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 7,
+      "mean_step_regret": 25.769969249455357,
+      "mean_episode_reward": 454.2456609815745,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 7,
+      "mean_step_regret": 25.769969249455357,
+      "mean_episode_reward": 454.2456609815745,
+      "gate_cvar_frac": 0.9852941176470589
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 7,
+      "mean_step_regret": 25.769969249455357,
+      "mean_episode_reward": 454.2456609815745,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 8,
+      "mean_step_regret": 25.61429428919568,
+      "mean_episode_reward": 462.18508395481825,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 52.63529550477898,
+      "mean_episode_reward": 729.8450833333332,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 9,
+      "mean_step_regret": 52.63529550477898,
+      "mean_episode_reward": 729.8450833333332,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 8,
+      "mean_step_regret": 24.568950058963484,
+      "mean_episode_reward": 515.4976396966598,
+      "gate_cvar_frac": 0.9101307189542484
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 9,
+      "mean_step_regret": 51.14526649652196,
+      "mean_episode_reward": 618.9795486712186,
+      "gate_cvar_frac": 0.5644699140401146
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 8,
+      "mean_step_regret": 25.61429428919568,
+      "mean_episode_reward": 462.18508395481825,
+      "gate_cvar_frac": 0.9836601307189542
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 8,
+      "mean_step_regret": 25.61429428919568,
+      "mean_episode_reward": 462.18508395481825,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 8,
+      "mean_step_regret": 25.61429428919568,
+      "mean_episode_reward": 462.18508395481825,
+      "gate_cvar_frac": 0.9983660130718954
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 62.41723214285714,
+      "mean_episode_reward": 595.6583333333333,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 9,
+      "mean_step_regret": 25.558025728812794,
+      "mean_episode_reward": 465.0547805343454,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 10,
+      "mean_step_regret": 62.41723214285714,
+      "mean_episode_reward": 595.6583333333333,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 9,
+      "mean_step_regret": 23.17404746837799,
+      "mean_episode_reward": 586.6376718165205,
+      "gate_cvar_frac": 0.8709150326797386
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 9,
+      "mean_step_regret": 25.558025728812794,
+      "mean_episode_reward": 465.0547805343454,
+      "gate_cvar_frac": 0.9869281045751634
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 10,
+      "mean_step_regret": 49.48533739021797,
+      "mean_episode_reward": 600.5093137020477,
+      "gate_cvar_frac": 0.5762195121951219
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 9,
+      "mean_step_regret": 25.558025728812794,
+      "mean_episode_reward": 465.0547805343454,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 9,
+      "mean_step_regret": 25.558025728812794,
+      "mean_episode_reward": 465.0547805343454,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 51.28909391534392,
+      "mean_episode_reward": 680.65,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 10,
+      "mean_step_regret": 25.71930082938592,
+      "mean_episode_reward": 456.8297504051163,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "seed": 11,
+      "mean_step_regret": 51.28909391534392,
+      "mean_episode_reward": 680.65,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 10,
+      "mean_step_regret": 25.71930082938592,
+      "mean_episode_reward": 456.8297504051163,
+      "gate_cvar_frac": 0.9901960784313726
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 10,
+      "mean_step_regret": 25.71930082938592,
+      "mean_episode_reward": 456.8297504051163,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 10,
+      "mean_step_regret": 24.615998042552828,
+      "mean_episode_reward": 513.0981925336037,
+      "gate_cvar_frac": 0.9052287581699346
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "seed": 11,
+      "mean_step_regret": 41.738851442029514,
+      "mean_episode_reward": 681.7489094320621,
+      "gate_cvar_frac": 0.5789473684210527
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 10,
+      "mean_step_regret": 25.71930082938592,
+      "mean_episode_reward": 456.8297504051163,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "seed": 11,
+      "mean_step_regret": 25.61113152993109,
+      "mean_episode_reward": 462.346384677312,
+      "gate_cvar_frac": null
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "seed": 11,
+      "mean_step_regret": 24.56006393096921,
+      "mean_episode_reward": 515.9508322243684,
+      "gate_cvar_frac": 0.9068627450980392
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "seed": 11,
+      "mean_step_regret": 25.61113152993109,
+      "mean_episode_reward": 462.346384677312,
+      "gate_cvar_frac": 0.9771241830065359
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "seed": 11,
+      "mean_step_regret": 25.61113152993109,
+      "mean_episode_reward": 462.346384677312,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "seed": 11,
+      "mean_step_regret": 25.61113152993109,
+      "mean_episode_reward": 462.346384677312,
+      "gate_cvar_frac": 1.0
+    }
+  ],
+  "aggregated": [
+    {
+      "kind": "CVaR",
+      "sigma": 0.0,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 2.5,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1641.0140927037965,
+      "sem_episode_reward": 6.855574260447693e-14
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 0.4,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 8.137661842540838,
+      "sem_step_regret": 0.24244186083103697,
+      "mean_episode_reward": 1361.1735956442371,
+      "sem_episode_reward": 10.144434914586201
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 1.0,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 21.079420055234582,
+      "sem_step_regret": 0.2946830072218035,
+      "mean_episode_reward": 714.836615858486,
+      "sem_episode_reward": 8.251817498916326
+    },
+    {
+      "kind": "CVaR",
+      "sigma": 2.0,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 25.6107251661106,
+      "sem_step_regret": 0.04768057406143898,
+      "mean_episode_reward": 462.36710923215696,
+      "sem_episode_reward": 2.4317092771333777
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.5,
+      "n_seeds": 12,
+      "mean_step_regret": 0.0,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "sem_episode_reward": 0.0,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.6,
+      "n_seeds": 12,
+      "mean_step_regret": 2.5,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1641.0140927037965,
+      "sem_episode_reward": 6.855574260447693e-14,
+      "gate_cvar_frac": 0.019607843137254898
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.7,
+      "n_seeds": 12,
+      "mean_step_regret": 2.5,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1641.0140927037965,
+      "sem_episode_reward": 6.855574260447693e-14,
+      "gate_cvar_frac": 0.019607843137254898
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.775,
+      "n_seeds": 12,
+      "mean_step_regret": 2.5,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1641.0140927037965,
+      "sem_episode_reward": 6.855574260447693e-14,
+      "gate_cvar_frac": 0.019607843137254898
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.85,
+      "n_seeds": 12,
+      "mean_step_regret": 2.5,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1641.0140927037965,
+      "sem_episode_reward": 6.855574260447693e-14,
+      "gate_cvar_frac": 0.019607843137254898
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.0,
+      "pi_star": 0.9,
+      "n_seeds": 12,
+      "mean_step_regret": 2.5,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1641.0140927037965,
+      "sem_episode_reward": 6.855574260447693e-14,
+      "gate_cvar_frac": 0.019607843137254898
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.5,
+      "n_seeds": 12,
+      "mean_step_regret": 6.562344135909309,
+      "sem_step_regret": 0.7151798338750806,
+      "mean_episode_reward": 1527.015640042028,
+      "sem_episode_reward": 16.171338595934767,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.6,
+      "n_seeds": 12,
+      "mean_step_regret": 9.377869077065059,
+      "sem_step_regret": 1.1177828732222075,
+      "mean_episode_reward": 1400.3027785109596,
+      "sem_episode_reward": 18.597277036312963,
+      "gate_cvar_frac": 0.08767828631723694
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.7,
+      "n_seeds": 12,
+      "mean_step_regret": 8.096052337965958,
+      "sem_step_regret": 0.5463070094220608,
+      "mean_episode_reward": 1393.5755960753902,
+      "sem_episode_reward": 12.05921009876151,
+      "gate_cvar_frac": 0.14688381250880825
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.775,
+      "n_seeds": 12,
+      "mean_step_regret": 8.137119112761427,
+      "sem_step_regret": 0.24236938930789986,
+      "mean_episode_reward": 1361.201274862987,
+      "sem_episode_reward": 10.13802357604758,
+      "gate_cvar_frac": 0.20617784910661896
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.85,
+      "n_seeds": 12,
+      "mean_step_regret": 8.137661842540838,
+      "sem_step_regret": 0.24244186083103697,
+      "mean_episode_reward": 1361.1735956442371,
+      "sem_episode_reward": 10.144434914586201,
+      "gate_cvar_frac": 0.2785520466934979
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 0.4,
+      "pi_star": 0.9,
+      "n_seeds": 12,
+      "mean_step_regret": 8.137661842540838,
+      "sem_step_regret": 0.24244186083103697,
+      "mean_episode_reward": 1361.1735956442371,
+      "sem_episode_reward": 10.144434914586201,
+      "gate_cvar_frac": 0.3525550554047225
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.5,
+      "n_seeds": 12,
+      "mean_step_regret": 36.997460234762876,
+      "sem_step_regret": 1.7893493906118851,
+      "mean_episode_reward": 929.0609314207899,
+      "sem_episode_reward": 26.29735081108328,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.6,
+      "n_seeds": 12,
+      "mean_step_regret": 35.127547059717216,
+      "sem_step_regret": 1.9428931748034388,
+      "mean_episode_reward": 894.3921647708985,
+      "sem_episode_reward": 17.940956475217085,
+      "gate_cvar_frac": 0.2969576396259433
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.7,
+      "n_seeds": 12,
+      "mean_step_regret": 23.06228089505186,
+      "sem_step_regret": 1.3198966340869707,
+      "mean_episode_reward": 831.4184360976791,
+      "sem_episode_reward": 11.465939988486689,
+      "gate_cvar_frac": 0.5552496164399451
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.775,
+      "n_seeds": 12,
+      "mean_step_regret": 21.079420055234582,
+      "sem_step_regret": 0.2946830072218035,
+      "mean_episode_reward": 714.836615858486,
+      "sem_episode_reward": 8.251817498916326,
+      "gate_cvar_frac": 0.7370128733527266
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.85,
+      "n_seeds": 12,
+      "mean_step_regret": 21.079420055234582,
+      "sem_step_regret": 0.2946830072218035,
+      "mean_episode_reward": 714.836615858486,
+      "sem_episode_reward": 8.251817498916326,
+      "gate_cvar_frac": 0.8832562559411627
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 1.0,
+      "pi_star": 0.9,
+      "n_seeds": 12,
+      "mean_step_regret": 21.079420055234582,
+      "sem_step_regret": 0.2946830072218035,
+      "mean_episode_reward": 714.836615858486,
+      "sem_episode_reward": 8.251817498916326,
+      "gate_cvar_frac": 0.9524604339929986
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.5,
+      "n_seeds": 12,
+      "mean_step_regret": 48.63550255798617,
+      "sem_step_regret": 2.027750883430068,
+      "mean_episode_reward": 761.9500958333332,
+      "sem_episode_reward": 26.631607591216454,
+      "gate_cvar_frac": 0.0
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.6,
+      "n_seeds": 12,
+      "mean_step_regret": 40.6770637029517,
+      "sem_step_regret": 2.452380191732414,
+      "mean_episode_reward": 661.1217608698183,
+      "sem_episode_reward": 14.155294359262925,
+      "gate_cvar_frac": 0.5714709008979909
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.7,
+      "n_seeds": 12,
+      "mean_step_regret": 24.194071684544113,
+      "sem_step_regret": 0.1717036851695687,
+      "mean_episode_reward": 534.6164367920479,
+      "sem_episode_reward": 8.75688794364802,
+      "gate_cvar_frac": 0.9027777777777777
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.775,
+      "n_seeds": 12,
+      "mean_step_regret": 25.6107251661106,
+      "sem_step_regret": 0.04768057406143898,
+      "mean_episode_reward": 462.36710923215696,
+      "sem_episode_reward": 2.4317092771333777,
+      "gate_cvar_frac": 0.9843409586056645
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.85,
+      "n_seeds": 12,
+      "mean_step_regret": 25.6107251661106,
+      "sem_step_regret": 0.04768057406143898,
+      "mean_episode_reward": 462.36710923215696,
+      "sem_episode_reward": 2.4317092771333777,
+      "gate_cvar_frac": 0.9994553376906318
+    },
+    {
+      "kind": "Hybrid",
+      "sigma": 2.0,
+      "pi_star": 0.9,
+      "n_seeds": 12,
+      "mean_step_regret": 25.6107251661106,
+      "sem_step_regret": 0.04768057406143898,
+      "mean_episode_reward": 462.36710923215696,
+      "sem_episode_reward": 2.4317092771333777,
+      "gate_cvar_frac": 1.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.0,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 0.0,
+      "sem_step_regret": 0.0,
+      "mean_episode_reward": 1768.5140927037955,
+      "sem_episode_reward": 0.0
+    },
+    {
+      "kind": "MAP",
+      "sigma": 0.4,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 6.562344135909309,
+      "sem_step_regret": 0.7151798338750806,
+      "mean_episode_reward": 1527.015640042028,
+      "sem_episode_reward": 16.171338595934767
+    },
+    {
+      "kind": "MAP",
+      "sigma": 1.0,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 36.997460234762876,
+      "sem_step_regret": 1.7893493906118851,
+      "mean_episode_reward": 929.0609314207899,
+      "sem_episode_reward": 26.29735081108328
+    },
+    {
+      "kind": "MAP",
+      "sigma": 2.0,
+      "pi_star": null,
+      "n_seeds": 12,
+      "mean_step_regret": 48.63550255798617,
+      "sem_step_regret": 2.027750883430068,
+      "mean_episode_reward": 761.9500958333332,
+      "sem_episode_reward": 26.631607591216454
+    }
+  ]
+}

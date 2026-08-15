@@ -1,0 +1,41 @@
+sigmas: [0.0, 0.4, 1.0, 2.0]
+n_seeds: 30
+episodes: 15
+n_version: 0
+n_actions: 4
+utility: one_step_counterfactual_simulator_reward
+primary_metric: mean_step_policy_regret
+
+risk:
+  alpha: 0.3
+  hybrid_gate: 0.7
+  theory_gate: 0.775
+
+telemetry:
+  sigmas: [1.0, 2.0]
+  channels: [independent, bursty]
+  p_loss: [0.0, 0.05, 0.10, 0.15, 0.20, 0.30]
+  alphas: [0.1, 0.2, 0.3, 0.5, 0.75]
+  n_seeds: 10
+  episodes: 10
+  burst_mean_steps: 3.0
+
+rankers:
+  - MAP
+  - BASR
+  - Belief-LTR
+  - MAP-LTR
+  - Residual-LTR
+  - Abstain-LTR
+  - CVaR-0.3
+  - Hybrid-0.7
+  - oracle
+
+models:
+  belief_ltr: models/belief_ltr.txt
+  map_ltr: models/map_ltr.txt
+  residual_ltr: models/residual_ltr.txt
+
+abstain:
+  threshold_config: configs/abstain_threshold.json
+  rule: Belief-LTR if confidence >= tau else MAP-Sim

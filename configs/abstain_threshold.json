@@ -1,0 +1,44 @@
+{
+  "threshold": 0.45,
+  "val_mean_step_regret": 18.90038465234888,
+  "grid": [
+    {
+      "threshold": 0.35,
+      "mean_step_regret": 18.928587532250837
+    },
+    {
+      "threshold": 0.45,
+      "mean_step_regret": 18.90038465234888
+    },
+    {
+      "threshold": 0.55,
+      "mean_step_regret": 18.930550143342025
+    },
+    {
+      "threshold": 0.65,
+      "mean_step_regret": 18.956786661969474
+    },
+    {
+      "threshold": 0.75,
+      "mean_step_regret": 18.944273823619802
+    },
+    {
+      "threshold": 0.85,
+      "mean_step_regret": 19.02828945106271
+    },
+    {
+      "threshold": 0.95,
+      "mean_step_regret": 19.02828945106271
+    }
+  ],
+  "sigmas": [
+    0.0,
+    0.4,
+    1.0,
+    2.0
+  ],
+  "episodes": 10,
+  "seed": 0,
+  "rule": "use Belief-LTR if confidence>=tau else MAP-Sim",
+  "confidence": "0.5*(1-H_norm) + 0.5*sigmoid(ltr_top1_top2_margin)"
+}
