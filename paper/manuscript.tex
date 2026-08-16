@@ -32,7 +32,7 @@
 
 %--------------------------------------------------------------------------
 \begin{abstract}
-Closed-loop AIoT intervention services must rank prompts while context beliefs are degraded by unreliable telemetry---independent and bursty packet loss, gaps and jitter---as well as sensor ambiguity.
+Closed-loop AIoT intervention services must rank prompts while context beliefs are degraded by independent and bursty packet loss as well as sensor ambiguity.
 Many managed pipelines collapse the belief to a MAP label before ranking; it is unclear whether richer uncertainty representations help an explicit ranking module as monitoring reliability worsens.
 We isolate ranking inside a fixed Sense--Monitor--Plan--Rank--Safety--Deliver loop on StepCountJITAI, hold candidates and one-step utility fixed and stress the monitor with a noise proxy \(\sigma\) plus matched-mean independent and Gilbert--Elliott packet-loss channels.
 Across matched operators (30 seeds), richer risk-neutral uncertainty representations alone do not outperform MAP---in contrast to soft-belief gains reported for learned RL policies on the same family of simulators.
@@ -554,7 +554,7 @@ We maximise the \emph{lower-tail} CVaR of utility, using the Rockafellar--Uryase
 \end{align}
 where \((\cdot)_+=\max\{\cdot,0\}\) and we select \(a_t=\arg\max_{a\in\mathcal{A}}\mathrm{CVaR}_\alpha(a)\) with \(\alpha=0.3\).
 Because \(\mathcal{C}=\{0,1\}\) is binary,~\eqref{eq:cvar} reduces to a two-point tail mean: if the worse context already carries mass at least \(\alpha\), \(\mathrm{CVaR}_\alpha\) collapses to that worst-case utility (a minimax selector); only when the worse mass is below \(\alpha\) does it blend the two utilities.
-That degeneracy is a feature of the binary geometry rather than a hidden extra algorithm and it is what makes the hybrid gate closed-form.
+That degeneracy is a feature of the binary geometry, not a hidden extra algorithm, and it is what makes the hybrid gate closed-form.
 
 The candidate set of~\eqref{eq:actions} has a specialize-versus-robust geometry: a specialized prompt returns \(H\) in its matching context but only \(L\) in the mismatched one, whereas the robust prompt returns \(M\) in both.
 Let \(\pi_t\) be the belief peak on the specialised prompt's matching context and write \(\varrho=(H-M)/(H-L)\).
@@ -603,6 +603,22 @@ Gate usage follows the same pattern, with the tail-sensitive branch handling \(0
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/heatmap_independent_alpha_ploss.pdf}\\[0.35em]
+\includegraphics[width=\textwidth]{figures/heatmap_bursty_alpha_ploss.pdf}
+\caption{Telemetry loss at \(\sigma=1\): independent (top) and bursty (bottom) CVaR heatmaps over \((\alpha,p_{\mathrm{loss}})\) for mean per-step regret, mean episode reward and SLA-proxy violation \(P(a_{\mathrm{spec}}\wedge\pi{<}0.7)\) (10 seeds).}
+\label{fig:heatmap-sigma1}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/heatmap_independent_alpha_ploss_sigma2.pdf}\\[0.35em]
+\includegraphics[width=\textwidth]{figures/heatmap_bursty_alpha_ploss_sigma2.pdf}
+\caption{Telemetry loss at \(\sigma=2\): independent (top) and bursty (bottom) CVaR heatmaps over \((\alpha,p_{\mathrm{loss}})\), same metrics as Fig.~\ref{fig:heatmap-sigma1} (10 seeds).}
+\label{fig:heatmap-sigma2}
+\end{figure*}
 
 \subsection{Mechanism: Decision Rule vs Episode Gain}
 \label{sec:mechanism}
@@ -666,43 +682,14 @@ At \(\sigma=2\), MAP-Sim issues such low-confidence specialised prompts on \(89.
 
 \paragraph{Independent and bursty packet loss.}
 We sweep mean loss \(p_{\mathrm{loss}}\in\{0,0.05,0.10,0.15,0.20,0.30\}\) under both channels at \(\sigma\in\{1,2\}\) (10 seeds, 10 episodes per cell), crossed with \(\alpha\in\{0.1,0.2,0.3,0.5,0.75\}\).
-Fig.~\ref{fig:heatmap-ind}--\ref{fig:heatmap-burst} show the \(\sigma=1\) heatmaps; Fig.~\ref{fig:heatmap-sigma2} shows the corresponding \(\sigma=2\) grids for both channels.
+This secondary grid uses fewer seeds and episodes than the primary 30-seed study, so its \(p_{\mathrm{loss}}=0\) sample means need not match Table~\ref{tab:cvar}; all loss contrasts are made within matched cells.
+Fig.~\ref{fig:heatmap-sigma1} shows the \(\sigma=1\) heatmaps; Fig.~\ref{fig:heatmap-sigma2} shows the corresponding \(\sigma=2\) grids for both channels.
 Across both noise levels, \(\alpha\approx 0.3\) remains the best operating region: \(\alpha=0.1\) pays an insurance premium, while \(\alpha\ge 0.5\) approaches risk-neutral behaviour.
 Table~\ref{tab:loss} summarises the \(\alpha=0.3\) slice.
-At \(\sigma=1\) and \(p_{\mathrm{loss}}=0.20\), independent loss gives MAP \(45.24\) vs CVaR \(24.88\) (\(\Delta\approx -20.4\)); bursty gives \(41.74\) vs \(24.14\) (\(\Delta\approx -17.6\)).
+At \(\sigma=1\) and \(p_{\mathrm{loss}}=0.20\), independent loss gives MAP \(45.2\) vs CVaR \(24.9\) (\(\Delta\approx -20.4\)); bursty gives \(41.7\) vs \(24.1\) (\(\Delta\approx -17.6\)).
 At \(\sigma=2\) the advantage widens: independent \(\Delta\approx -22.4\) at \(20\%\) loss and \(\Delta\approx -27.0\) at \(30\%\); bursty deltas stay near \(-21\) to \(-23\).
 CVaR's SLA-proxy violation remains \(0.00\) on every cell, while MAP's rises from about \(0.53\)--\(0.61\) at \(\sigma=1\) to \(0.86\)--\(0.91\) at \(\sigma=2\).
-Fig.~\ref{fig:delta-ploss} overlays \(\mathrm{CVaR}_{0.3}-\)MAP regret versus \(p_{\mathrm{loss}}\) for both \(\sigma\).
 Risk-sensitive ranking therefore remains preferable under i.i.d.\ and bursty monitoring drops at matched mean loss.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/heatmap_independent_alpha_ploss.pdf}
-\caption{Independent (Bernoulli) telemetry loss at \(\sigma=1\): CVaR heatmaps over \((\alpha,p_{\mathrm{loss}})\) for mean per-step regret, mean episode reward and SLA-proxy violation \(P(a_{\mathrm{spec}}\wedge\pi{<}0.7)\) (10 seeds).}
-\label{fig:heatmap-ind}
-\end{figure*}
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/heatmap_bursty_alpha_ploss.pdf}
-\caption{Bursty (Gilbert--Elliott) telemetry loss at \(\sigma=1\): same metrics as Fig.~\ref{fig:heatmap-ind} at matched mean \(p_{\mathrm{loss}}\) (10 seeds).}
-\label{fig:heatmap-burst}
-\end{figure*}
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/heatmap_independent_alpha_ploss_sigma2.pdf}\\[0.35em]
-\includegraphics[width=\textwidth]{figures/heatmap_bursty_alpha_ploss_sigma2.pdf}
-\caption{Telemetry loss at \(\sigma=2\): independent (top) and bursty (bottom) CVaR heatmaps over \((\alpha,p_{\mathrm{loss}})\), same metrics as Fig.~\ref{fig:heatmap-ind} (10 seeds).}
-\label{fig:heatmap-sigma2}
-\end{figure*}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{figures/delta_regret_vs_ploss.pdf}
-\caption{CVaR\(_{0.3}-\)MAP regret delta versus \(p_{\mathrm{loss}}\) under independent and bursty channels at \(\sigma\in\{1,2\}\).}
-\label{fig:delta-ploss}
-\end{figure}
 
 Table~\ref{tab:sla} summarises service-facing latency under SLA-style targets (multi-tenant cells: mean \(\pm\) SD over \(8\) desktop repeats).
 Single-decision ranking p50 stays near \(1\)\,ms for MAP and CVaR; a Poisson arrival model at \(\lambda=100\)\,s\(^{-1}\) with four workers keeps sojourn p95 near \(3.2\)\,ms for both.
