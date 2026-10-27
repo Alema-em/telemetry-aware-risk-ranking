@@ -24,7 +24,7 @@
 
 \begin{document}
 
-\title{Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management in AIoT\thanks{Alternate title under consideration: Risk-Sensitive Ranking for Managed AIoT Intervention Services under Unreliable Telemetry.}}
+\title{Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management}
 
 \author{Alema Emran}
 
@@ -32,16 +32,14 @@
 
 %--------------------------------------------------------------------------
 \begin{abstract}
-Closed-loop AIoT intervention services must rank prompts while context beliefs are degraded by independent and bursty packet loss as well as sensor ambiguity.
-Many managed pipelines collapse the belief to a MAP label before ranking; it is unclear whether richer uncertainty representations help an explicit ranking module as monitoring reliability worsens.
-We isolate ranking inside a fixed Sense--Monitor--Plan--Rank--Safety--Deliver loop on StepCountJITAI, hold candidates and one-step utility fixed and stress the monitor with a noise proxy \(\sigma\) plus matched-mean independent and Gilbert--Elliott packet-loss channels.
-Across matched operators (30 seeds), richer risk-neutral uncertainty representations alone do not outperform MAP---in contrast to soft-belief gains reported for learned RL policies on the same family of simulators.
-CVaR reduces high-\(\sigma\) regret by \(24.89\) units at \(\sigma=2\), while the Hybrid gate (\(\pi^\star=0.7\)) reduces it by \(26.09\) (bootstrap \(95\%\) CIs exclude zero); both gains persist on \(\alpha\times p_{\mathrm{loss}}\) heatmaps at \(\sigma\in\{1,2\}\) and reverse when habituation / disengagement is frozen, consistent with trajectory mediation.
-We also report a deployable specialised-prompt / SLA-proxy KPI and multi-tenant ranking latency under SLA-style targets (up to \(64\) concurrent users).
+Closed-loop intervention services rank allow-listed prompts, including no-prompt, a low-intensity prompt and context-specialised activity messages. Context beliefs can become unreliable because of independent or bursty packet loss. Several service-management architectures reduce the belief to a maximum a posteriori (MAP) label before ranking. We study whether richer uncertainty representations improve an explicit ranking module as the monitored belief becomes less informative or stale.
+We isolate ranking inside a fixed sense--monitor--plan--rank--safety--deliver loop on StepCountJITAI. The intervention action set and the one-step utility stay fixed. Context noise \(\sigma\) and matched-mean independent and Gilbert--Elliott packet-loss channels are varied. \(\sigma\) is the StepCountJITAI context-observation noise. Packet loss drops an already formed belief update.
+Across matched operators and 30 random seeds, richer risk-neutral uncertainty representations do not outperform MAP-based ranking. Conditional value-at-risk (CVaR) reduces regret by \(24.89\) units at \(\sigma=2\). The Hybrid gate at \(\pi^\star=0.7\) reduces it by \(26.09\) units. The bootstrap \(95\%\) confidence intervals exclude zero. The gain remains on the tail-level and packet-loss heatmaps at \(\sigma\in\{1,2\}\) and reverses when habituation and disengagement are frozen. The improvement follows the closed-loop trajectory.
+We also report the low-confidence specialised-prompt rate and multi-tenant ranking latency under service targets for up to \(64\) concurrent users.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Network and service management, unreliable telemetry, packet loss, closed-loop AIoT, intervention ranking, CVaR, SLA, policy regret
+Network and service management, unreliable telemetry, packet loss, closed-loop, intervention services, intervention ranking, CVaR, SLA, policy regret
 \end{IEEEkeywords}
 
 %--------------------------------------------------------------------------
@@ -53,7 +51,7 @@ From a network and service management perspective, the ranking stage is a swappa
 The monitoring path is itself networked telemetry: missing packets, transport gaps and jitter flatten the context belief in the same way that abstract inference noise does, so ranking under partial observability is also a problem of deciding under unreliable telemetry~\cite{wang2023dtservice}.
 Getting that choice wrong is costly in service terms.
 A poorly timed or poorly matched prompt raises habituation and disengagement; after repeated misses the prompts feel like noise and the managed service that looked complete on a demo day quietly fails in daily use~\cite{nahum2018jitai,karine2024stepcount}.
-Reliable ranking under degraded monitoring is therefore a practical requirement for managed AIoT intervention services.
+Reliable ranking under degraded monitoring is therefore a practical requirement for managed intervention services.
 
 The root difficulty is that the platform never sees why a prompt would help.
 It maintains a belief over latent context from noisy steps, missing packets and ambiguous behaviour~\cite{kaelbling1998pomdp}.
@@ -64,18 +62,18 @@ Modern pipelines already implement a modular loop---sense, monitor, plan, rank, 
 Soft belief has been shown to help trained RL policies under context inference error~\cite{karine2023uai}, but modular managed systems expose a ranking module rather than an end-to-end policy~\cite{sutton2018rl}.
 What that module should consume as telemetry reliability worsens remains unclear.
 
-This paper isolates ranking inside a fixed modular closed-loop AIoT service on StepCountJITAI~\cite{karine2024stepcount,towers2024gymnasium}.
-We use \emph{agentic} only in that narrow, pre-LLM sense: a bounded Sense--Monitor--Plan--Rank--Safety--Deliver loop with no autonomous tool use or multi-step language planning.
-The contribution is not a new simulator and not a new CVaR algorithm: it is a controlled comparison of uncertainty representations inside an explicit ranking module under matched candidates, matched one-step utilities and degraded monitoring---including a negative result for risk-neutral soft belief / LTR relative to MAP, which does not contradict soft-belief gains for trained RL policies~\cite{karine2023uai}.
-We sweep a noise parameter \(\sigma\) as a monitoring-reliability proxy, add explicit packet-loss channels and compare operators by mean per-step policy regret.
-The primary scientific story is risk-sensitive ranking under that reliability stress: after a risk-neutral regime map shows that richer belief features alone do not beat MAP, we change the aggregation rule to CVaR / Hybrid and analyse when and why that helps.
+This paper isolates ranking inside a fixed modular closed-loop intervention service on StepCountJITAI~\cite{karine2024stepcount,towers2024gymnasium}.
+The loop is a bounded sense--monitor--plan--rank--safety--deliver sequence with no autonomous tool use or multi-step language planning.
+The comparison holds the simulator, the action set and the one-step utility fixed and changes only how the ranking module uses the belief. Risk-neutral soft belief and learning-to-rank do not improve on MAP here. That result sits beside the soft-belief gains reported for trained RL policies~\cite{karine2023uai}.
+\(\sigma\) is the StepCountJITAI context-observation noise. Packet loss is applied after the belief is formed. Operators are compared by mean per-step policy regret.
+The risk-neutral comparison shows that richer belief features alone do not beat MAP. The aggregation rule is then changed to CVaR and Hybrid and the study asks when that change lowers regret.
 The main contributions are as follows.
 \begin{itemize}
   \item \textbf{Isolated ranking comparison.} We fix \(\rho:(p_t,x_t,\mathcal{A})\mapsto a_t\) so that only the uncertainty representation inside ranking changes inside an otherwise fixed managed service loop.
-  \item \textbf{Risk-neutral regime map (30 seeds).} Across six operators over \(\sigma\in\{0,0.4,1.0,2.0\}\), soft belief and LTR do not automatically beat MAP; BASR is significantly worse.
+  \item \textbf{Risk-neutral comparison (30 seeds).} Across six operators over \(\sigma\in\{0,0.4,1.0,2.0\}\), soft belief and learning-to-rank do not beat MAP. Belief-averaged ranking is worse.
   \item \textbf{Risk-sensitive aggregation under telemetry impairment.} \(\mathrm{CVaR}_\alpha\) cuts high-\(\sigma\) regret by \(24.89\) units at \(\sigma=2\) (\(\approx 49\%\) relative); the Hybrid gate at operational \(\pi^\star=0.7\) cuts it by \(26.09\) (paired bootstrap CIs exclude zero). Gains persist under stochastic / process-noise locks and on matched-mean independent / Gilbert--Elliott \(\alpha\times p_{\mathrm{loss}}\) heatmaps at \(\sigma\in\{1,2\}\).
   \item \textbf{Trajectory-mediated mechanism.} A one-step twin recovers \(\pi^\star\) as a decision rule but not the episode regret win; freezing habituation / disengagement reverses the CVaR advantage.
-  \item \textbf{Service-facing evidence.} A deployable specialised-prompt / SLA proxy, \(\pi^\star\) sweep versus reward/regret and multi-tenant ranking latency under SLA-style targets.
+  \item \textbf{Service-facing evidence.} The low-confidence specialised-prompt rate, a \(\pi^\star\) sweep against reward and regret and multi-tenant ranking latency under service targets.
 \end{itemize}
 
 The remainder of this paper is organized as follows.
@@ -121,10 +119,10 @@ The gap we target is therefore service-relevant: under matched candidates, match
 \section{System Model and Problem Formulation}
 \label{sec:system-model}
 
-\subsection{Overview of the Closed-Loop AIoT Service}
+\subsection{Overview of the Closed-Loop Intervention Service}
 \label{sec:loop}
 
-We consider a closed-loop AIoT system that repeatedly senses, decides and acts on behalf of one user.
+We consider a closed-loop intervention service that repeatedly senses, decides and acts for one user.
 The loop has six stages, shown in Fig.~\ref{fig:architecture}.
 A wearable or edge node first publishes telemetry over a lightweight message transport.
 Monitoring then converts that telemetry into a belief over the latent context together with a vector of behavioural state features and planning enumerates a fixed set of candidate interventions.
@@ -228,7 +226,7 @@ The orchestration and transport layers are treated as deployment context, not as
 \caption{Closed-loop modular architecture for intervention delivery on StepCountJITAI.
 The dashed frame is held fixed.
 Orange marks the ranking module \(\rho\), the only stage varied.
-Green marks the risk-sensitive operators studied after the risk-neutral regime map.}
+Green marks the risk-sensitive operators studied after the risk-neutral comparison.}
 \label{fig:architecture}
 \end{figure*}
 
@@ -300,8 +298,8 @@ p_t(c)=\Pr\!\left(c_t=c \mid o_{1:t}\right)\:,
 \end{align}
 where \(o_{1:t}\) denotes the observation history.
 The noise level \(\sigma\) controls how informative that history is, so a larger \(\sigma\) flattens the belief and increases inference error.
-In this paper we treat \(\sigma\) as a controllable \emph{monitoring-reliability proxy}: larger \(\sigma\) stands in for regimes in which telemetry is less informative because of sensor ambiguity and/or networked degradation (loss, gaps, jitter).
-To make the networked reading explicit for TNSM, we also impair the monitoring path with two packet-loss channels that share the same mean loss rate \(p_{\mathrm{loss}}\):
+In StepCountJITAI, \(\sigma\) is the standard deviation of the noise added to the context observation before the belief is formed. At \(\sigma=0\) the monitor receives the true context and the belief stays on one point. At \(\sigma=0.4\) the belief is only slightly spread. At \(\sigma=1\) both contexts carry substantial probability and the belief is nearly flat. Packet loss \(p_{\mathrm{loss}}\) deletes an already formed belief update. Raising \(\sigma\) makes each update less informative. Raising \(p_{\mathrm{loss}}\) makes updates fail to arrive.
+The monitoring path is also studied with two packet-loss channels that share the same mean loss rate \(p_{\mathrm{loss}}\):
 \begin{itemize}
   \item \textbf{Independent loss:} each monitoring packet is dropped independently with probability \(p_{\mathrm{loss}}\) (Bernoulli).
   \item \textbf{Bursty loss:} a Gilbert--Elliott two-state Markov channel~\cite{gilbert1960capacity,elliott1963estimates} with a lossless Good state and an always-loss Bad state, mean burst length \(3\) steps and steady-state \(\Pr(\mathrm{Bad})=p_{\mathrm{loss}}\).
@@ -380,7 +378,7 @@ The system model rests on five assumptions that bound the scope of the conclusio
 The candidate set is fixed and small, so ranking is a selection problem rather than a generation problem.
 The ranking score is a one-step counterfactual utility, which makes the operators myopic by construction and prevents planning over the horizon.
 The belief supplied by the monitoring stage is treated as given: belief estimation quality is controlled through \(\sigma\) rather than modelled separately.
-The locked evaluation uses the deterministic dynamics setting of the environment for the risk-neutral regime map, removing transition noise as a confound and isolating context uncertainty; stochastic dynamics and process-noise transfer are reported separately for the risk-sensitive operators.
+The locked evaluation uses the deterministic dynamics setting of the environment for the risk-neutral comparison. That removes transition noise as a confound and isolates context uncertainty. Stochastic dynamics and process-noise transfer are reported separately for the risk-sensitive operators.
 Finally, primary evaluation is simulation-based; no clinical efficacy claim is made and no human subject data are used.
 A secondary lab ESP32 / MQTT loop is reported only as deployment feasibility (connectivity and ranking-stage timing), not as a substitute for the StepCountJITAI regret study.
 
@@ -404,7 +402,7 @@ The research question follows directly: given the interface in~\eqref{eq:operato
 \label{sec:protocol}
 
 We use StepCountJITAI at its published configuration~\cite{karine2024stepcount} and fix a single ranking interface so that only the belief representation changes across operators (Table~\ref{tab:operators}).
-The risk-neutral regime map evaluates all six operators over \(\sigma\in\{0,0.4,1.0,2.0\}\), thirty seeds and fifteen episodes per cell.
+The risk-neutral comparison evaluates all six operators over \(\sigma\in\{0,0.4,1.0,2.0\}\), thirty seeds and fifteen episodes per cell.
 Belief-feature and deferral ablations isolate soft belief at fixed model capacity and confidence-gated fallback.
 The risk-sensitive study replaces aggregation by CVaR / Hybrid~\cite{rockafellar2000cvar,chow2015cvar}, uses the same thirty-seed protocol and adds stochastic-dynamics and process-noise transfer checks, a habituation / disengagement freeze ablation and a deployable proxy KPI.
 Secondary benches use smaller seed counts for compute (twenty for the \(H/D\) freeze and proxy KPI; ten--fifteen for telemetry-loss heatmaps and lock checks); they are not used to replace the primary thirty-seed contrasts.
@@ -554,7 +552,7 @@ We maximise the \emph{lower-tail} CVaR of utility, using the Rockafellar--Uryase
 \end{align}
 where \((\cdot)_+=\max\{\cdot,0\}\) and we select \(a_t=\arg\max_{a\in\mathcal{A}}\mathrm{CVaR}_\alpha(a)\) with \(\alpha=0.3\).
 Because \(\mathcal{C}=\{0,1\}\) is binary,~\eqref{eq:cvar} reduces to a two-point tail mean: if the worse context already carries mass at least \(\alpha\), \(\mathrm{CVaR}_\alpha\) collapses to that worst-case utility (a minimax selector); only when the worse mass is below \(\alpha\) does it blend the two utilities.
-That degeneracy is a feature of the binary geometry, not a hidden extra algorithm, and it is what makes the hybrid gate closed-form.
+That degeneracy follows from the binary context geometry and it is what makes the hybrid gate closed-form.
 
 The candidate set of~\eqref{eq:actions} has a specialize-versus-robust geometry: a specialized prompt returns \(H\) in its matching context but only \(L\) in the mismatched one, whereas the robust prompt returns \(M\) in both.
 Let \(\pi_t\) be the belief peak on the specialised prompt's matching context and write \(\varrho=(H-M)/(H-L)\).
@@ -565,7 +563,7 @@ Comparing \(\mathrm{CVaR}_\alpha\) of the specialised prompt with the constant s
 \end{align}
 i.e.\ the robust prompt is preferred once \(\pi_t<\pi^\star\).
 (The same algebra gives \(\pi^\star=1-\alpha\) in the pure-minimax regime \(\pi_t\le 1-\alpha\), which is stricter and is absorbed by~\eqref{eq:crossover} whenever \(\varrho\le 1\).)
-We estimate \(H\), \(M\) and \(L\) as empirical means of the corresponding one-step utilities under the locked StepCountJITAI configuration used for the regime map, obtaining \(H\approx 51.45\), \(M\approx 12.94\) and \(L\approx 0.09\), hence \(\varrho\approx 0.75\) and a theory point estimate \(\pi^\star(\alpha)\approx 0.775\) at \(\alpha=0.3\).
+We estimate \(H\), \(M\) and \(L\) as empirical means of the corresponding one-step utilities under the locked StepCountJITAI configuration used for the risk-neutral comparison, obtaining \(H\approx 51.45\), \(M\approx 12.94\) and \(L\approx 0.09\), hence \(\varrho\approx 0.75\) and a theory point estimate \(\pi^\star(\alpha)\approx 0.775\) at \(\alpha=0.3\).
 Equation~\eqref{eq:crossover} is therefore a closed-form consequence of this H/M/L structure, not a universal law across arbitrary candidate geometries.
 Within that structure it holds empirically as a decision rule: below \(\pi^\star\) the tail-sensitive operator selects the robust prompt on \(100\%\) of steps while disagreeing with belief collapse on \(93\%\) of them, whereas above \(\pi^\star\) the two rules almost never disagree.
 A hybrid operator therefore applies belief collapse when \(\pi_t\ge\pi^\star\) and the tail-sensitive score otherwise.
@@ -608,7 +606,7 @@ Gate usage follows the same pattern, with the tail-sensitive branch handling \(0
 \centering
 \includegraphics[width=\textwidth]{figures/heatmap_independent_alpha_ploss.pdf}\\[0.35em]
 \includegraphics[width=\textwidth]{figures/heatmap_bursty_alpha_ploss.pdf}
-\caption{Telemetry loss at \(\sigma=1\): independent (top) and bursty (bottom) CVaR heatmaps over \((\alpha,p_{\mathrm{loss}})\) for mean per-step regret, mean episode reward and SLA-proxy violation \(P(a_{\mathrm{spec}}\wedge\pi{<}0.7)\) (10 seeds).}
+\caption{Telemetry loss at \(\sigma=1\): independent (top) and bursty (bottom) CVaR heatmaps over \((\alpha,p_{\mathrm{loss}})\) for mean per-step regret, mean episode reward and the low-confidence specialised-prompt rate \(P(a_{\mathrm{spec}}\wedge\pi{<}0.7)\) (10 seeds).}
 \label{fig:heatmap-sigma1}
 \end{figure*}
 
@@ -672,12 +670,12 @@ Transfer (\(\sigma_s{=}20\), 15 seeds) & \(49.33\) & \(-22.86\) \\
 \end{tabular}
 \end{table}
 
-\subsection{Deployable Proxy, Telemetry Loss Heatmaps and SLA Reading}
+\subsection{Deployable Indicator, Telemetry Loss Heatmaps and Service Reading}
 \label{sec:proxy}
 
 Oracle regret is a research instrument.
 For service operation we also report a deployable proxy that needs no true context: the rate of specialised prompts issued when the belief peak is below \(0.7\) (Table~\ref{tab:proxy}).
-We reuse the same event as an \emph{SLA-proxy violation} under impaired telemetry: \(P(a_t\in\{2,3\}\wedge\pi_t{<}0.7)\) evaluated on the belief actually consumed by the ranker.
+We reuse the same event as the low-confidence specialised-prompt rate under impaired telemetry: \(P(a_t\in\{2,3\}\wedge\pi_t{<}0.7)\) evaluated on the belief actually consumed by the ranker.
 At \(\sigma=2\), MAP-Sim issues such low-confidence specialised prompts on \(89.2\%\) of steps, whereas CVaR drives that rate to \(0.0\%\) by shifting mass to the robust prompt (\(75.3\%\) robust vs \(0.0\%\) for MAP).
 
 \paragraph{Independent and bursty packet loss.}
@@ -688,7 +686,7 @@ Across both noise levels, \(\alpha\approx 0.3\) remains the best operating regio
 Table~\ref{tab:loss} summarises the \(\alpha=0.3\) slice.
 At \(\sigma=1\) and \(p_{\mathrm{loss}}=0.20\), independent loss gives MAP \(45.2\) vs CVaR \(24.9\) (\(\Delta\approx -20.4\)); bursty gives \(41.7\) vs \(24.1\) (\(\Delta\approx -17.6\)).
 At \(\sigma=2\) the advantage widens: independent \(\Delta\approx -22.4\) at \(20\%\) loss and \(\Delta\approx -27.0\) at \(30\%\); bursty deltas stay near \(-21\) to \(-23\).
-CVaR's SLA-proxy violation remains \(0.00\) on every cell, while MAP's rises from about \(0.53\)--\(0.61\) at \(\sigma=1\) to \(0.86\)--\(0.91\) at \(\sigma=2\).
+CVaR's low-confidence specialised-prompt rate remains \(0.00\) for \(\alpha\leq 0.3\), while MAP's rate rises from about \(0.53\)--\(0.61\) at \(\sigma=1\) to \(0.86\)--\(0.91\) at \(\sigma=2\).
 Risk-sensitive ranking therefore remains preferable under i.i.d.\ and bursty monitoring drops at matched mean loss.
 
 Table~\ref{tab:sla} summarises service-facing latency under SLA-style targets (multi-tenant cells: mean \(\pm\) SD over \(8\) desktop repeats).
@@ -700,7 +698,7 @@ Thus CVaR's regret reduction of about \(24.9\) units at \(\sigma=2\) does not bu
 
 \begin{table}[t]
 \centering
-\caption{Deployable proxy at high noise (20 seeds).}
+\caption{Deployable indicator at high noise (20 seeds).}
 \label{tab:proxy}
 \footnotesize
 \begin{tabular}{@{}lcccc@{}}
@@ -774,7 +772,7 @@ The alternate one-step geometry that fails to reproduce the episode gain undersc
 
 \subsection{Scope of Systems Evidence}
 \label{sec:scope}
-Counterfactual oracle utility via environment snapshot/restore is not available in a live AIoT loop, where true context is never observed even post hoc.
+Counterfactual oracle utility via environment snapshot and restore is not available in a live service loop, where the true context is never observed even after the fact.
 Hence \(\mathcal{R}(\rho)\) is a research instrument for comparing ranking rules; the low-confidence specialised-prompt rate is the corresponding deployable proxy.
 The scientific contribution is ranking under controlled monitoring impairment (\(\sigma\) and matched-mean independent / Gilbert--Elliott loss); systems packaging is secondary evidence for that claim.
 Desktop multi-tenant benches measure ranking-stage latency and throughput on one host under thread-pool concurrency (Table~\ref{tab:sla})---they characterise the Rank module's compute envelope, not a multi-rack Kubernetes deployment.
@@ -785,8 +783,8 @@ Replaying those records yields ranking-stage p95 latency of \(0.75\)\,ms (MAP) a
 On-device step/HR sensing remains simulated in that lab loop; the ESP32 result is connectivity and ranking-stage timing only.
 
 \subsection{Implications for Network and Service Management}
-The practical takeaway for operators of closed-loop AIoT intervention services is modular: keep Sense--Monitor--Plan--Safety--Deliver fixed and treat Rank as the only policy surface under unreliable telemetry.
-Risk-neutral soft belief is not a free upgrade on this interface; when monitoring reliability is poor (high \(\sigma\) or packet loss), risk-sensitive aggregation (CVaR / Hybrid with \(\pi^\star=0.7\)) is the change that moves both research regret and the deployable specialised-prompt / SLA proxy, with only a modest ranking-stage latency trade-off appearing at high concurrent tenant counts in our benches.
+The practical reading for operators of closed-loop intervention services is modular. Keep sense, monitor, plan, safety and deliver fixed and treat rank as the decision surface under unreliable telemetry.
+Risk-neutral soft belief does not improve this interface. When context noise is high or belief updates are lost, CVaR and Hybrid with \(\pi^\star=0.7\) lower research regret and the low-confidence specialised-prompt rate. The ranking-stage latency cost stays modest until the concurrent user count is high.
 Because the episode gain is trajectory-mediated, service KPIs should track engagement / habituation-sensitive outcomes over windows longer than one decision, not only one-step accuracy.
 
 %--------------------------------------------------------------------------
@@ -796,7 +794,7 @@ Because the episode gain is trajectory-mediated, service KPIs should track engag
 Under the ranking interface studied here, risk-neutral soft belief and LTR do not automatically beat MAP as context noise grows on StepCountJITAI~\cite{karine2023uai,karine2024stepcount}.
 Changing aggregation to CVaR / Hybrid reverses the high-noise ordering: CVaR cuts regret by \(24.89\) units at \(\sigma=2\) and Hybrid (\(\pi^\star=0.7\)) by \(26.09\) (30 seeds; bootstrap CIs exclude zero), with gains preserved under stochastic dynamics, stronger process noise and independent / bursty packet-loss heatmaps at \(\sigma\in\{1,2\}\).
 Evidence from a calibrated synthetic twin and from an \(H/D\) freeze ablation is consistent with trajectory mediation of the episode gain and with a geometry-specific reading of \(\pi^\star\).
-A deployable proxy KPI, multi-tenant ranking-latency benches and a lab ESP32 / MQTT gateway loop connect the ranking module to managed AIoT service operation.
+A low-confidence specialised-prompt rate, multi-tenant ranking-latency benches and a lab ESP32 and MQTT gateway loop connect the ranking module to managed intervention-service operation.
 Future work includes long-horizon service objectives beyond mean per-step policy regret, additional utility geometries and multi-user contention under richer transport traces.
 
 %--------------------------------------------------------------------------

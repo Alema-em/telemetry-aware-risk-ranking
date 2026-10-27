@@ -44,7 +44,7 @@ def bench_e2e_breakdown(n: int = 200, sigma: float = 1.0) -> dict:
             env = make_env(sigma=sigma, seed=i, n_version=0)
             env.reset()
             t0 = time.perf_counter()
-            env.step(0)  # sense/monitor proxy: advance twin
+            env.step(0)                                     
             t1 = time.perf_counter()
             _ = _choose(method, env)
             t2 = time.perf_counter()
@@ -73,7 +73,7 @@ def bench_queue(arrival_hz: float, n_jobs: int = 300, workers: int = 1, sigma: f
     """
     methods = {}
     for method in ("MAP", "CVaR_0.3"):
-        # pre-generate service times by measuring
+                                                 
         svc = []
         for i in range(80):
             env = make_env(sigma=sigma, seed=10_000 + i, n_version=0)
@@ -83,11 +83,11 @@ def bench_queue(arrival_hz: float, n_jobs: int = 300, workers: int = 1, sigma: f
             svc.append(time.perf_counter() - t0)
         mean_svc = float(np.mean(svc))
 
-        # event simulation in simulated time (not wall clock) using measured svc dist
+                                                                                     
         svc_arr = np.asarray(svc)
         arrivals = RNG.exponential(1.0 / arrival_hz, size=n_jobs)
         t_arr = np.cumsum(arrivals)
-        # each worker next-free time
+                                    
         free = np.zeros(workers, dtype=float)
         waits, sojourns = [], []
         for ta in t_arr:
@@ -138,9 +138,9 @@ def bench_jitter_loss(
                     ep_r, steps = 0.0, 0
                     stale_action = None
                     while not done:
-                        # optional network delay (busy wait tiny / recorded only)
+                                                                                 
                         if jitter_ms > 0 and condition == "lossy":
-                            time.sleep(min(jitter_ms, 5.0) / 1000.0 * 0.0)  # no real sleep; keep fast
+                            time.sleep(min(jitter_ms, 5.0) / 1000.0 * 0.0)                            
                         use_stale = condition == "lossy" and (RNG.random() < p_drop) and stale_action is not None
                         if use_stale:
                             a = int(stale_action)
@@ -230,7 +230,7 @@ def main() -> None:
     print("=== multitenant ===", flush=True)
     mt = bench_multitenant()
 
-    # reuse prior concurrency microbench if present
+                                                   
     prior = OUT / "service_latency_bench.json"
     prior_data = json.loads(prior.read_text(encoding="utf-8")) if prior.exists() else None
 

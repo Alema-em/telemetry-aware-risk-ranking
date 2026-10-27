@@ -47,11 +47,11 @@ def ltr_margin(env, model_path: Path | None = None) -> float:
 def confidence_features(env, model_path: Path | None = None) -> dict[str, float]:
     probs = belief_probs(env)
     ent = belief_entropy(probs)
-    # Normalize entropy to [0,1] for binary belief (max ln2)
+                                                            
     ent_norm = ent / max(np.log(2.0), 1e-12)
     margin = ltr_margin(env, model_path=model_path)
-    # Combined confidence in [0,1]-ish: low entropy and larger margin => higher
-    # Use sigmoid on margin for scale-robustness
+                                                                               
+                                                
     margin_sig = float(1.0 / (1.0 + np.exp(-margin)))
     conf = float((1.0 - min(max(ent_norm, 0.0), 1.0)) * 0.5 + margin_sig * 0.5)
     return {
@@ -97,7 +97,7 @@ def tune_threshold(
     if sigmas is None:
         sigmas = [0.0, 0.4, 1.0, 2.0]
 
-    # Ensure booster is loadable
+                                
     if not BELIEF_LTR_PATH.exists():
         raise FileNotFoundError(f"Frozen Belief-LTR model missing: {BELIEF_LTR_PATH}")
 

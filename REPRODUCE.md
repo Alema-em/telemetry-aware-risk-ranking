@@ -54,7 +54,7 @@ After a full run:
 .\.venv\Scripts\python.exe scripts\verify_results.py results\runs\full-TIMESTAMP
 ```
 
-The verifier checks the regime map, high-seed study, Hybrid sweep and telemetry heatmaps against the committed reference metrics. Deterministic policy metrics use small numeric tolerances. Timing results are excluded.
+The verifier checks the risk-neutral comparison, the high-seed study, the Hybrid sweep and the telemetry heatmaps against the committed reference metrics. Deterministic policy metrics use small numeric tolerances. Timing results are excluded.
 
 ## Seeds
 

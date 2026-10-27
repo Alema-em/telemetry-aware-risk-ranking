@@ -32,7 +32,7 @@ def collect_pairs(
         ep_seed = int(rng.integers(0, 1_000_000))
         env = make_env(sigma=sigma, seed=ep_seed, n_version=0)
         env.reset()
-        # burn-in a few random steps so states are diverse
+                                                          
         for _ in range(int(rng.integers(0, 8))):
             a = int(rng.integers(0, env.action_space.n))
             _, _, term, trunc, _ = env.step(a)
@@ -41,7 +41,7 @@ def collect_pairs(
 
         feats = context_features(env).tolist()
         utils = utilities_all_actions(env, assumed_c=None)
-        # sample a pair of distinct actions
+                                           
         a_i, a_j = rng.choice(env.action_space.n, size=2, replace=False)
         a_i, a_j = int(a_i), int(a_j)
         if abs(utils[a_i] - utils[a_j]) < 1e-6:
@@ -100,7 +100,7 @@ def main():
         for r in rows:
             f.write(json.dumps(r) + "\n")
 
-    # also save a compact numpy-friendly summary
+                                                
     meta = {
         "n_pairs": len(rows),
         "feature_dim": len(rows[0]["features"]) if rows else 0,

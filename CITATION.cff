@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite the accompanying paper."
-title: "Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management in AIoT"
+title: "Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management"
 type: software
 authors:
   - family-names: Emran
@@ -10,7 +10,7 @@ date-released: 2026-08-16
 license: MIT
 preferred-citation:
   type: article
-  title: "Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management in AIoT"
+  title: "Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management"
   authors:
     - family-names: Emran
       given-names: Alema

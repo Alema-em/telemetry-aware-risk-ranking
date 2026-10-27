@@ -126,7 +126,7 @@ def plot(agg: list[dict]) -> None:
             "legend.fontsize": 8,
         }
     )
-    # Focus panels at σ=1 and σ=2 (where gate matters)
+                                                      
     for sigma in (1.0, 2.0):
         hyb = [r for r in agg if r["kind"] == "Hybrid" and r["sigma"] == sigma]
         hyb = sorted(hyb, key=lambda r: r["pi_star"])
@@ -169,7 +169,7 @@ def plot(agg: list[dict]) -> None:
         fig.savefig(OUT / f"{stem}.png", bbox_inches="tight")
         plt.close(fig)
 
-    # Combined 2x2 for paper: regret+reward at σ=1 and σ=2
+                                                          
     fig, axes = plt.subplots(2, 2, figsize=(8.6, 6.2), dpi=180)
     for col, sigma in enumerate((1.0, 2.0)):
         hyb = sorted([r for r in agg if r["kind"] == "Hybrid" and r["sigma"] == sigma], key=lambda r: r["pi_star"])

@@ -41,16 +41,16 @@ N_SEEDS = 30
 EPISODES = 15
 ALPHA = 0.3
 SIGMAS = [0.0, 0.4, 1.0, 2.0]
-# synthetic uncertainty grid (analogous to sigma)
+                                                 
 US = [0.0, 0.25, 0.5, 0.75, 1.0]
-STEPS_PER_SEED = 200  # i.i.d. synthetic steps per seed per u
+STEPS_PER_SEED = 200                                         
 
 
 def _agg(raw: list[dict], key_method: str = "method", key_x: str = "sigma") -> list[dict]:
     buckets: dict[tuple, list] = defaultdict(list)
     for r in raw:
         buckets[(r[key_method], r[key_x])].append(r)
-    # map baselines
+                   
     map_ref = {}
     for (m, x), items in buckets.items():
         if m == "MAP":
@@ -126,7 +126,7 @@ def run_synthetic_study() -> dict:
     rho = rho_of(cfg)
     print(f"synthetic H={cfg.H} M={cfg.M} L={cfg.L} rho={rho:.3f} pi*={thr:.3f}", flush=True)
 
-    # Decision-rule accuracy across all u
+                                         
     decision_rows = []
     regret_raw = []
     for seed in range(N_SEEDS):
@@ -141,7 +141,7 @@ def run_synthetic_study() -> dict:
                 a_cvar = choose_cvar(s.probs, s.U, ALPHA)
                 a_hyb = choose_hybrid(s.probs, s.U, ALPHA, pi_star_thr=thr, cfg=cfg)
                 theory_rob = int(s.pi < thr)
-                # robust action id is 1 in construction
+                                                       
                 cvar_rob = int(a_cvar == 1)
                 match += int(theory_rob == cvar_rob)
                 n += 1
@@ -179,7 +179,7 @@ def run_synthetic_study() -> dict:
                 flush=True,
             )
 
-    # bin decision accuracy by pi
+                                 
     bins = np.linspace(0.5, 1.0, 11)
     binned = []
     for i in range(len(bins) - 1):
@@ -285,7 +285,7 @@ def main():
     plot_syn_regret(syn["aggregated"], syn["config"]["pi_star"], OUT / "highseed_synthetic_regret.png")
     plot_syn_decision(syn["decision_binned"], syn["config"]["pi_star"], OUT / "highseed_synthetic_decision.png")
 
-    # concise summary tables
+                            
     summary = {
         "n_seeds": N_SEEDS,
         "stepcount": sc["aggregated"],

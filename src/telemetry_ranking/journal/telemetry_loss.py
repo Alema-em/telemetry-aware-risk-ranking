@@ -31,8 +31,8 @@ class GilbertElliott:
 
     def __post_init__(self) -> None:
         p = float(np.clip(self.p_loss, 0.0, 0.999))
-        r = 1.0 / max(float(self.mean_burst_len), 1.0)  # P(Bad -> Good)
-        # Steady-state P(Bad) = h / (h + r) = p  =>  h = p r / (1-p)
+        r = 1.0 / max(float(self.mean_burst_len), 1.0)                  
+                                                                    
         h = 0.0 if p <= 0 else (p * r) / max(1.0 - p, 1e-12)
         self.p = p
         self.r = float(np.clip(r, 0.0, 1.0))
@@ -62,7 +62,7 @@ class TelemetryChannel:
         self.n_steps = 0
         self.n_drops = 0
         if self.kind == "bursty" and self.p_loss > 0:
-            # Start in steady-state occupancy of Bad
+                                                    
             self.in_bad = bool(self.rng.random() < self.p_loss)
 
     def delivered(self) -> bool:
@@ -73,7 +73,7 @@ class TelemetryChannel:
         if self.kind == "independent":
             drop = bool(self.rng.random() < self.p_loss)
         else:
-            # Transition then emit
+                                  
             if self.in_bad:
                 if self.rng.random() < self.ge.r:
                     self.in_bad = False

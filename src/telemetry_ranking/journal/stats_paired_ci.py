@@ -1,8 +1,4 @@
-"""Paired bootstrap CIs and significance tests for journal results.
-
-Reads existing high-seed CVaR JSON and (if present) 30-seed regime map.
-Writes results to the configured run directory.
-"""
+"""Paired bootstrap intervals for the journal results."""
 from __future__ import annotations
 
 import json
@@ -29,7 +25,7 @@ def paired_delta_stats(a: np.ndarray, b: np.ndarray, label: str) -> dict:
     d = b - a
     n = len(d)
     mean_d = float(np.mean(d))
-    # Bootstrap percentile CI on mean paired delta
+                                                  
     boots = []
     idx = np.arange(n)
     for _ in range(N_BOOT):
@@ -37,22 +33,22 @@ def paired_delta_stats(a: np.ndarray, b: np.ndarray, label: str) -> dict:
         boots.append(float(np.mean(d[take])))
     boots_arr = np.asarray(boots)
     ci_low, ci_high = np.percentile(boots_arr, [2.5, 97.5])
-    # Paired t-test (two-sided)
+                               
     se = float(np.std(d, ddof=1) / np.sqrt(n))
     t_stat = mean_d / se if se > 0 else float("inf")
-    # two-sided p via Student-t survival (no scipy dependency): normal approx for n>=15
+                                                                                       
     from math import erfc, sqrt
 
     z = abs(t_stat)
-    p_approx = float(erfc(z / sqrt(2.0)))  # two-sided normal approx
-    # Wilcoxon signed-rank (simple exact for small n via scipy if available)
+    p_approx = float(erfc(z / sqrt(2.0)))                           
+                                                                            
     wilcoxon_p = None
     try:
         from scipy.stats import t as student_t
         from scipy.stats import wilcoxon
 
         p_t = float(student_t.sf(abs(t_stat), df=n - 1) * 2.0)
-        # zero_method omit; alternative two-sided
+                                                 
         if np.any(d != 0):
             wilcoxon_p = float(wilcoxon(d, alternative="two-sided").pvalue)
         p_approx = p_t
@@ -101,7 +97,7 @@ def stats_highseed_cvar() -> list[dict]:
             a, b, seeds = _seed_vectors(raw, "MAP", other, sigma, key="method")
             if len(seeds) < 2:
                 continue
-            # delta = other - MAP; negative favours other (lower regret)
+                                                                        
             st = paired_delta_stats(a, b, f"MAP vs {other} @ σ={sigma}")
             st["sigma"] = sigma
             st["method_a"] = "MAP"
@@ -115,14 +111,14 @@ def stats_regime_map() -> list[dict]:
     if not path.exists():
         return []
     data = json.loads(path.read_text(encoding="utf-8"))
-    # Adapt raw_rows: add seed if present; run_episodes may not store seed — check
+                                                                                  
     raw = []
     for r in data.get("raw_rows", []):
-        # run_episodes returns dict without seed; reconstruct from order if needed
+                                                                                  
         raw.append(r)
-    # Prefer reconstructing from raw if seed field missing
+                                                          
     if raw and "seed" not in raw[0]:
-        # Cannot do paired tests without seed alignment — skip with note
+                                                                        
         return [
             {
                 "note": "regime_map_30seed.json raw_rows lack per-seed id for pairing; "
@@ -167,7 +163,7 @@ def main() -> None:
             f"CI excludes 0: {r['ci_excludes_zero']}"
         )
     lines.append("")
-    lines.append("## Regime map contrasts")
+    lines.append("## Risk-neutral comparison")
     lines.append("")
     for r in report["regime_map_contrasts"]:
         if "note" in r:

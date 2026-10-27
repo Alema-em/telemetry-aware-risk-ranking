@@ -1,4 +1,4 @@
-"""Run the 30-seed risk-neutral regime map."""
+"""Run the 30-seed risk-neutral comparison."""
 from __future__ import annotations
 
 import json
@@ -43,7 +43,7 @@ def aggregate_rows(rows: list[dict]) -> list[dict]:
         n = len(regrets)
         std = float(np.std(regrets, ddof=1)) if n > 1 else 0.0
         sem = float(std / np.sqrt(n)) if n > 1 else 0.0
-        # Normal approx 95% CI on the mean
+                                          
         ci = 1.96 * sem
         agg.append(
             {
@@ -97,7 +97,7 @@ def plot_regime(agg: list[dict], out: Path) -> None:
         ax.errorbar(xs, ys, yerr=es, marker="o", capsize=3, label=name)
     ax.set_xlabel("Context uncertainty σ")
     ax.set_ylabel("Mean per-step policy regret")
-    ax.set_title(f"Journal regime map ({N_SEEDS} seeds; error bars = SEM)")
+    ax.set_title(f"Risk-neutral comparison ({N_SEEDS} seeds; error bars = SEM)")
     ax.grid(True, alpha=0.3)
     ax.legend(fontsize=8)
     fig.tight_layout()

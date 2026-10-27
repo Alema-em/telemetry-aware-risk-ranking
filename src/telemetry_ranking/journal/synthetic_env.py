@@ -23,7 +23,7 @@ class SynthConfig:
     H: float = 50.0
     M: float = 12.5
     L: float = 0.1
-    # slight noise so utilities are not perfectly constant
+                                                          
     noise_std: float = 0.5
 
 
@@ -54,17 +54,17 @@ def sample_belief(u: float, rng: np.random.Generator) -> np.ndarray:
     u=0 => near-deterministic peak; u=1 => near-uniform.
     """
     u = float(np.clip(u, 0.0, 1.0))
-    # concentration kappa high when u low
+                                         
     kappa = 1.0 + 40.0 * (1.0 - u) ** 2
-    # sample on peak mass in [0.5, 1]
-    # Beta centered near 0.5 + 0.5*(1-u)
+                                     
+                                        
     mean_peak = 0.5 + 0.5 * (1.0 - u)
-    # convert mean/kappa-ish to Beta(a,b) on [0,1] then map to [0.5,1]
+                                                                      
     a = mean_peak * kappa
     b = (1.0 - mean_peak) * kappa
     z = float(rng.beta(max(a, 1e-3), max(b, 1e-3)))
-    pi = 0.5 + 0.5 * z  # in [0.5, 1]
-    # which context is MAP
+    pi = 0.5 + 0.5 * z               
+                          
     if rng.random() < 0.5:
         return np.array([pi, 1.0 - pi], dtype=float)
     return np.array([1.0 - pi, pi], dtype=float)
@@ -75,7 +75,7 @@ def sample_true_context(probs: np.ndarray, rng: np.random.Generator, calibrated:
     p = probs / max(float(probs.sum()), 1e-12)
     if calibrated:
         return int(rng.choice(len(p), p=p))
-    # stress: inflate error vs MAP by 20% chance of flip from MAP
+                                                                 
     map_c = int(np.argmax(p))
     if rng.random() < 0.2:
         return 1 - map_c

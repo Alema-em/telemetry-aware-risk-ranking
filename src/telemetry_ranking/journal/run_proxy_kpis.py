@@ -1,10 +1,10 @@
-"""Deployable proxy KPIs for journal / TNSM framing (no true context required).
+"""Low-confidence specialised-prompt rate. The true context is not required.
 
 Reports, per method × σ:
   - specialized-prompt rate (a in {2,3})
   - robust-prompt rate (a == 1)
   - mean belief peak π
-  - low-confidence specialized rate (π < 0.7 and a in {2,3})  ← deployable proxy
+  - low-confidence specialised-prompt rate (π < 0.7 and a in {2,3})
   - mean decision latency (ms)
   - hybrid gate-CVaR fraction (when applicable)
 
@@ -61,7 +61,7 @@ def run_method(name: str, choose, sigma: float, seed: int) -> dict:
             a = int(choose(env))
             latencies.append((time.perf_counter() - t0) * 1000.0)
             if name.startswith("Hybrid"):
-                # approximate: CVaR branch when pi < gate
+                                                         
                 if pi < PI_GATE:
                     gate_cvar += 1
             if a in (2, 3):
@@ -111,7 +111,7 @@ def main() -> None:
                 print(f"[{k}/{total}] seed={seed} sigma={sigma} {name}", flush=True)
                 raw.append(run_method(name, fn, sigma, seed))
 
-    # Aggregate
+               
     agg = []
     for sigma in SIGMAS:
         for name in methods:
@@ -148,7 +148,7 @@ def main() -> None:
 
     md = OUT / "PROXY_KPI_FINDINGS.md"
     lines = [
-        "# Deployable proxy KPIs",
+        "# Low-confidence specialised-prompt rate",
         "",
         "Primary research metric remains oracle regret. Proxies below need no true context.",
         "",

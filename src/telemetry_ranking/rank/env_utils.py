@@ -79,7 +79,7 @@ def belief_probs(env: StepCountJITAI) -> np.ndarray:
 def context_features(env: StepCountJITAI) -> np.ndarray:
     """Numeric features available to a ranker (no true C)."""
     d = env.unpack_obs_array(env.current_state)
-    # probs for both contexts, inferred L, H, D, S, time indicator
+                                                                  
     return np.array(
         [
             float(d["probs"][0]),

@@ -259,7 +259,7 @@ def write_findings(sto: dict, transfer_a: dict, transfer_b: dict) -> str:
         d = byb[("CVaR_0.3", u)]["delta_vs_map"]
         lines.append(f"| {u} | {m:.2f} | {c:.2f} | {h:.2f} | {d:+.2f} |")
 
-    # Quick verdict helpers
+                           
     def high_sigma_win(agg, xkey="sigma", xhi=2.0) -> bool:
         for r in agg:
             if r["method"] == "CVaR_0.3" and r[xkey] == xhi and r["delta_vs_map"] < 0:
@@ -311,7 +311,7 @@ def main() -> None:
     )
 
     tb = run_synthetic_transfer()
-    # strip huge raw for lighter file? keep for reproducibility but compact optional
+                                                                                    
     (OUT / "lock_transfer_synth_alt.json").write_text(
         json.dumps({"config": tb["config"], "aggregated": tb["aggregated"]}, indent=2),
         encoding="utf-8",

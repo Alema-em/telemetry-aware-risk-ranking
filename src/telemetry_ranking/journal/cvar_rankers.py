@@ -60,11 +60,11 @@ def score_cvar(probs: np.ndarray, U: np.ndarray, alpha: float = 0.3) -> np.ndarr
 
     for a in range(A):
         utils = U[:, a]
-        # Sort contexts from worst to best utility for this action
-        order = np.argsort(utils)  # ascending = worst first
+                                                                  
+        order = np.argsort(utils)                           
         u_sorted = utils[order]
         p_sorted = p[order]
-        # Accumulate worst alpha probability mass
+                                                 
         remaining = alpha
         cvar_mass = 0.0
         cvar_sum = 0.0
@@ -142,7 +142,7 @@ def rank_hybrid_pi_gate(
     if adaptive_pi_star:
         thr = pi_star_from_geometry(U, alpha=alpha)
     elif pi_star is None:
-        thr = 0.7  # operational Hybrid gate (held-out sweep; theory ≈0.775)
+        thr = 0.7                                                           
     else:
         thr = float(pi_star)
     if pi >= thr:

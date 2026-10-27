@@ -1,10 +1,4 @@
-"""TNSM telemetry heatmaps: α × p_loss under independent and bursty loss.
-
-Supports multiple σ values. Metrics: mean per-step policy regret, mean episode
-reward, SLA-proxy violation = P(specialised ∧ π < 0.7).
-
-Writes results to the configured run directory.
-"""
+"""Heatmaps of tail level against packet loss for regret, reward and the low-confidence specialised-prompt rate."""
 from __future__ import annotations
 
 import json
@@ -162,7 +156,7 @@ def plot_heatmaps(agg: list[dict]) -> None:
     metrics = [
         ("mean_step_regret", "Mean per-step policy regret", "regret"),
         ("mean_episode_reward", "Mean episode reward", "reward"),
-        ("sla_violation_rate", r"SLA-proxy violation $P(a_{\mathrm{spec}}\wedge\pi<0.7)$", "sla"),
+        ("sla_violation_rate", "Low-confidence\nspecialised-prompt rate [%]", "sla"),
     ]
     for sigma in SIGMAS:
         for channel in CHANNELS:
@@ -202,7 +196,7 @@ def plot_heatmaps(agg: list[dict]) -> None:
             )
             fig.tight_layout()
             stem = f"heatmap_{channel}_alpha_ploss_sigma{sigma:g}".replace(".", "p")
-            # also keep legacy names for σ=1
+                                            
             fig.savefig(FIG / f"{stem}.png", bbox_inches="tight")
             fig.savefig(FIG / f"{stem}.pdf", bbox_inches="tight")
             if abs(sigma - 1.0) < 1e-9:
@@ -211,7 +205,7 @@ def plot_heatmaps(agg: list[dict]) -> None:
                 fig.savefig(FIG / f"{legacy}.pdf", bbox_inches="tight")
             plt.close(fig)
 
-    # Combined delta plot: σ=1 and σ=2, both channels
+                                                     
     fig, axes = plt.subplots(1, 2, figsize=(8.4, 3.3), dpi=180)
     for ax, channel in zip(axes, CHANNELS):
         for sigma, style, color in ((1.0, "-o", "#1F4E79"), (2.0, "-s", "#C45C26")):
@@ -251,14 +245,14 @@ def plot_heatmaps(agg: list[dict]) -> None:
 
 
 def main() -> None:
-    # Optionally reuse existing σ=1 seed rows to save time
+                                                          
     prev_path = OUT / "tnsm_telemetry_heatmaps.json"
     reused: list[dict] = []
     run_sigmas = list(SIGMAS)
     if prev_path.exists():
         prev = json.loads(prev_path.read_text(encoding="utf-8"))
         old_rows = prev.get("seed_rows", [])
-        # Only reuse if they already carry a sigma field or were the σ=1-only run
+                                                                                 
         for r in old_rows:
             if "sigma" not in r:
                 r = dict(r)
@@ -290,7 +284,7 @@ def main() -> None:
                 if done % 40 == 0 or done == len(jobs):
                     print(f"  {done}/{len(jobs)}", flush=True)
 
-    # Replicate MAP across α
+                            
     map_rows = [r for r in rows if r["method"] == "MAP"]
     have = {(r["sigma"], r["channel"], r["p_loss"], r["alpha"], r["seed"]) for r in rows if r["method"] == "MAP"}
     extra = []

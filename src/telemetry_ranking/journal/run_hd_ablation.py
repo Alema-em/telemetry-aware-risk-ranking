@@ -102,7 +102,7 @@ def summarize(raw: list[dict], condition: str) -> tuple[list[dict], list[dict]]:
                     "sem": float(np.std(arr, ddof=1) / np.sqrt(len(arr))),
                 }
             )
-    # paired deltas
+                   
     deltas = []
     for sigma in SIGMAS:
         map_by = {

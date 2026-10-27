@@ -10,10 +10,10 @@ The manuscript uses committed reference JSON so that reported values can be chec
 | Synthetic twin dissociation | `telemetry_ranking.figures` | `highseed_summary.json` |
 | Independent loss heatmaps | `telemetry_ranking.journal.run_tnsm_heatmaps` | `tnsm_telemetry_heatmaps.json` |
 | Bursty loss heatmaps | `telemetry_ranking.journal.run_tnsm_heatmaps` | `tnsm_telemetry_heatmaps.json` |
-| Risk-neutral regime table | `telemetry_ranking.journal.run_regime_map_highseed` | `regime_map_30seed.json` |
+| Risk-neutral comparison table | `telemetry_ranking.journal.run_regime_map_highseed` | `regime_map_30seed.json` |
 | CVaR and Hybrid table | `telemetry_ranking.journal.run_high_seed_study` | `highseed_stepcount.json` |
 | H/D ablation table | `telemetry_ranking.journal.run_hd_ablation` | `hd_ablation.json` |
-| Deployable proxy table | `telemetry_ranking.journal.run_proxy_kpis` | `proxy_kpis.json` |
+| Low-confidence specialised-prompt table | `telemetry_ranking.journal.run_proxy_kpis` | `proxy_kpis.json` |
 | Independent and bursty loss table | `telemetry_ranking.journal.run_tnsm_heatmaps` | `tnsm_telemetry_heatmaps.json` |
 | SLA latency table | `telemetry_ranking.journal.run_systems_repeated` | `systems_repeated.json` |
 

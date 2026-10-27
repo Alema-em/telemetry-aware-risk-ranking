@@ -79,8 +79,8 @@ def row_features(
 
 def relevance_from_utils(utils: np.ndarray) -> np.ndarray:
     """Integer relevance labels for LambdaRank (higher = better)."""
-    order = np.argsort(np.argsort(utils))  # ranks ascending
-    # map to 0..n-1 with best getting highest
+    order = np.argsort(np.argsort(utils))                   
+                                             
     return order.astype(int)
 
 
@@ -273,7 +273,7 @@ def score_actions(env, booster: lgb.Booster, mode: FeatureMode) -> np.ndarray:
     x = np.vstack([row_features(feats, a, mode, map_utils=map_utils) for a in range(N_ACTIONS)])
     pred = np.asarray(booster.predict(x), dtype=float)
     if mode == "residual":
-        # final score = MAP utility + learned residual
+                                                      
         return np.asarray(map_utils, dtype=float) + pred
     return pred
 
