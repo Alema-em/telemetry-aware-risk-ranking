@@ -1,6 +1,6 @@
 # Telemetry-aware risk-sensitive ranking
 
-This repository contains the code, reference results and manuscript for a simulation study of intervention ranking under unreliable telemetry.
+This repository contains the code and reference results for a simulation study of intervention ranking under unreliable telemetry.
 
 The intervention candidates and the one-step utility stay fixed. The comparison covers MAP collapse, soft-belief ranking, CVaR ranking and a Hybrid gate on the belief peak. The monitoring conditions are context noise, independent packet loss and Gilbert–Elliott bursty loss. Context noise is the StepCountJITAI observation noise. Packet loss drops an already formed belief update.
 
@@ -15,8 +15,7 @@ At the highest noise level and over 30 seeds, CVaR lowers mean per-step regret b
 ```text
 configs/              Frozen experiment settings
 models/               Trained LightGBM rankers
-paper/                Manuscript, bibliography and figures
-results/reference/    Reference JSON used in the paper
+results/reference/    Reference JSON for the reported experiments
 scripts/              Reproduction and verification commands
 src/telemetry_ranking Core rankers and experiments
 tests/                Deterministic unit and schema tests
@@ -46,11 +45,11 @@ Linux or macOS:
 ./.venv/bin/python -m pytest
 ```
 
-See [REPRODUCE.md](REPRODUCE.md) for the paper and full profiles.
+See [REPRODUCE.md](REPRODUCE.md) for the smoke, paper and full profiles.
 
 ## Data statement
 
-Oracle training rows and experiment traces are produced by the simulator. The ESP32 records discussed in the manuscript use synthetic device telemetry for gateway timing. This repository contains no participant data, protected health information or device credentials.
+Oracle training rows and experiment traces are produced by the simulator. The ESP32 records use synthetic device telemetry for gateway timing. This repository contains no participant data, protected health information or device credentials.
 
 ## Reproducibility scope
 
@@ -58,7 +57,7 @@ Policy metrics are deterministic under the recorded seeds and software versions.
 
 ## Citation
 
-Citation metadata is in [CITATION.cff](CITATION.cff). The manuscript is under review. The title is Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management.
+Citation metadata is in [CITATION.cff](CITATION.cff). The title is Telemetry-Aware Risk-Sensitive Ranking for Intervention Service Management.
 
 ## License
 

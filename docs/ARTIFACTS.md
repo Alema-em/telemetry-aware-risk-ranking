@@ -1,10 +1,9 @@
-# Paper artifact map
+# Experiment artifact map
 
-The manuscript uses committed reference JSON so that reported values can be checked without repeating the longest runs.
+Committed reference JSON under `results/reference/` lets reported values be checked without repeating the longest runs.
 
-| Paper artifact | Generator | Reference input |
+| Artifact | Generator | Reference input |
 |---|---|---|
-| Closed-loop architecture | `paper/manuscript.tex` | Inline TikZ |
 | Regret vs context noise | `telemetry_ranking.figures` | `regime_map_30seed.json` |
 | Hybrid gate sweep | `telemetry_ranking.journal.run_pi_sweep` | `pi_star_sweep.json` |
 | Synthetic twin dissociation | `telemetry_ranking.figures` | `highseed_summary.json` |
@@ -19,6 +18,6 @@ The manuscript uses committed reference JSON so that reported values can be chec
 
 ## Reference result policy
 
-Files under `results/reference/` are immutable paper artifacts. New runs belong under `results/runs/`. The reproduction runner sets output paths for each experiment so reference files are not replaced.
+Files under `results/reference/` are immutable experiment artifacts. New runs belong under `results/runs/`. The reproduction runner sets output paths for each experiment so reference files are not replaced.
 
-The LaTeX tables are currently typeset in `paper/manuscript.tex`. `scripts/verify_results.py` checks the corresponding regenerated JSON before a release.
+`scripts/verify_results.py` checks the corresponding regenerated JSON before a release.

@@ -1,4 +1,4 @@
-# Reproducing the paper
+# Reproducing the experiments
 
 ## Environment
 
@@ -26,17 +26,17 @@ Expected runtime: under one minute.
 
 ### Paper
 
-Regenerates JSON-driven figures from the committed reference results and compiles the manuscript.
+Regenerates JSON-driven figures from the committed reference results.
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\reproduce.py paper
 ```
 
-This profile requires `pdflatex` and `bibtex`. Expected runtime: under five minutes.
+Expected runtime: under five minutes.
 
 ### Full
 
-Re-runs the scientific experiments, telemetry-loss sweeps and systems benchmarks before rebuilding the manuscript.
+Re-runs the scientific experiments, telemetry-loss sweeps and systems benchmarks, then regenerates figures.
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\reproduce.py full

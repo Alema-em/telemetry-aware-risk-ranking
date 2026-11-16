@@ -21,7 +21,6 @@ from telemetry_ranking.rank.rankers import policy_regret
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "results" / "reference"
-PAPER = ROOT / "paper"
 PACKAGES = [
     "StepCountJITAI",
     "gymnasium",
@@ -127,30 +126,7 @@ def run_modules(output: Path, figures: Path) -> None:
 
 def prepare_figures(results: Path, figures: Path) -> None:
     figures.mkdir(parents=True, exist_ok=True)
-    for source in (PAPER / "figures").glob("*.pdf"):
-        shutil.copy2(source, figures / source.name)
     generate_all(results, figures)
-
-
-def compile_paper(output: Path, figures: Path) -> None:
-    if shutil.which("pdflatex") is None or shutil.which("bibtex") is None:
-        raise RuntimeError("pdflatex and bibtex are required for the paper profile")
-    build = output / "paper"
-    build.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(PAPER / "manuscript.tex", build / "manuscript.tex")
-    shutil.copy2(PAPER / "references.bib", build / "references.bib")
-    target_figures = build / "figures"
-    target_figures.mkdir(exist_ok=True)
-    for source in figures.glob("*.pdf"):
-        shutil.copy2(source, target_figures / source.name)
-    commands = [
-        ["pdflatex", "-interaction=nonstopmode", "manuscript.tex"],
-        ["bibtex", "manuscript"],
-        ["pdflatex", "-interaction=nonstopmode", "manuscript.tex"],
-        ["pdflatex", "-interaction=nonstopmode", "manuscript.tex"],
-    ]
-    for command in commands:
-        subprocess.run(command, cwd=build, check=True, capture_output=True)
 
 
 def write_manifest(
@@ -200,11 +176,9 @@ def main() -> None:
             run_smoke(output)
         elif args.profile == "paper":
             prepare_figures(REFERENCE, figures)
-            compile_paper(output, figures)
         else:
             run_modules(output, figures)
             prepare_figures(output, figures)
-            compile_paper(output, figures)
     except Exception:
         write_manifest(output, args.profile, started, "failed")
         raise
