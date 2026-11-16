@@ -19,7 +19,11 @@ results/reference/    Reference JSON for the reported experiments
 scripts/              Reproduction and verification commands
 src/telemetry_ranking Core rankers and experiments
 tests/                Deterministic unit and schema tests
+Belief-Age-Aware Intervention Scheduling under Intermittent IoT Sensing/
+                      Belief-age Act/Wait/Defer scheduling (COMSNETS)
 ```
+
+See the nested folder README for the belief-age experiments and ESP32 testbed.
 
 ## Quick start
 
